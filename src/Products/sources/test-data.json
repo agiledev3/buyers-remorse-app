@@ -1,9 +1,11 @@
 {
   "products": [
     {
+      "id": 1,
       "name": "First product"
     },
     {
+      "id": 2,
       "name": "Second product"
     }
   ]

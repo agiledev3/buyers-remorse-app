@@ -9,7 +9,11 @@ class Products {
     return this._readProductsFromSource();
   }
 
-  create(newProduct) {
+  update(productId, productChanges) {
+
+  }
+
+  create(product) {
 
   }
 

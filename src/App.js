@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+
+import "./App.css";
+import Home from "./Components/Home";
+import { Products, TestSource } from "./Products";
+
+const products = new Products(TestSource);
 
 function App() {
+  const [activePage, setActivePage] = useState(App.pages.HOME);
+  const allProducts = products.getAll();
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {activePage === App.pages.HOME && (
+          <Home allProducts={allProducts} changePage={setActivePage} />
+        )}
       </header>
     </div>
   );
 }
+
+App.pages = { HOME: "HOME", EDIT_PRODUCT: "EDIT_PRODUCT" };
 
 export default App;

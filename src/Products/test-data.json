@@ -1,0 +1,10 @@
+{
+  "products": [
+    {
+      "name": "First product"
+    },
+    {
+      "name": "Second product"
+    }
+  ]
+}

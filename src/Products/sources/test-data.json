@@ -2,11 +2,15 @@
   "products": [
     {
       "id": 1,
-      "name": "First product"
+      "name": "First product",
+      "daysLeft" : 2,
+      "likeCount" : 3
     },
     {
       "id": 2,
-      "name": "Second product"
+      "name": "Second product",
+      "daysLeft" : 4,
+      "likeCount" : 1
     }
   ]
 }

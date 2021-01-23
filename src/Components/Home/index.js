@@ -1,14 +1,9 @@
 import React from "react";
+import ProductList from './ProductList'
 
 const Home = (props) => {
   return (
-    <div>
-      <ul>
-        {props.allProducts.map((product) => (
-          <li key={product.id}>{product.name}</li>
-        ))}
-      </ul>
-    </div>
+    <ProductList allProducts={props.allProducts}/>
   );
 };
 

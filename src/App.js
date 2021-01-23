@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import "./App.css";
 import Home from "./Components/Home";
@@ -10,13 +11,15 @@ function App() {
   const [activePage, setActivePage] = useState(App.pages.HOME);
   const allProducts = products.getAll();
   return (
-    <div className="App">
-      <header className="App-header">
-        {activePage === App.pages.HOME && (
-          <Home allProducts={allProducts} changePage={setActivePage} />
-        )}
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <header className="App-header">
+          {activePage === App.pages.HOME && (
+            <Home allProducts={allProducts} changePage={setActivePage} />
+          )}
+        </header>
+      </div>
+    </Router>
   );
 }
 

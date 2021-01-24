@@ -11,6 +11,12 @@
       "name": "Second product",
       "daysLeft" : 4,
       "likeCount" : 1
+    },
+    {
+      "id": 3,
+      "name": "Third product",
+      "daysLeft" : 0,
+      "likeCount" : 5
     }
   ]
 }

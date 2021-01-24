@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import "./App.css";
 import Home from "./Components/Home";
 import { Products, TestSource } from "./Products";
 

@@ -4,6 +4,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Home from "./Components/Home";
 import { Products, TestSource } from "./Products";
 
+import Container from 'react-bootstrap/Container'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 const products = new Products(TestSource);
 
 function App() {
@@ -11,13 +14,13 @@ function App() {
   const allProducts = products.getAll();
   return (
     <Router>
-      <div className="App">
-        <header className="App-header">
+      <Container>
+        <header>
           {activePage === App.pages.HOME && (
             <Home allProducts={allProducts} changePage={setActivePage} />
           )}
         </header>
-      </div>
+      </Container>
     </Router>
   );
 }

@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/buyers-remorse-app/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/buyers-remorse-app/static/js/main.eddf7fe8.chunk.js",
+    "main.js.map": "/buyers-remorse-app/static/js/main.eddf7fe8.chunk.js.map",
+    "runtime-main.js": "/buyers-remorse-app/static/js/runtime-main.2d428a55.js",
+    "runtime-main.js.map": "/buyers-remorse-app/static/js/runtime-main.2d428a55.js.map",
+    "static/js/2.215d9208.chunk.js": "/buyers-remorse-app/static/js/2.215d9208.chunk.js",
+    "static/js/2.215d9208.chunk.js.map": "/buyers-remorse-app/static/js/2.215d9208.chunk.js.map",
+    "static/js/3.bb57b480.chunk.js": "/buyers-remorse-app/static/js/3.bb57b480.chunk.js",
+    "static/js/3.bb57b480.chunk.js.map": "/buyers-remorse-app/static/js/3.bb57b480.chunk.js.map",
+    "index.html": "/buyers-remorse-app/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/buyers-remorse-app/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.215d9208.chunk.js.LICENSE.txt": "/buyers-remorse-app/static/js/2.215d9208.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2d428a55.js",
+    "static/js/2.215d9208.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.eddf7fe8.chunk.js"
+  ]
+}

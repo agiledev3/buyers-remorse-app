@@ -1,6 +1,5 @@
 import React from 'react'
 import ListItem from './ListItem'
-import { Link } from 'react-router-dom'
 import { Card, Col, Row, Button, Badge } from 'react-bootstrap'
 
 function ProductList(props) {
@@ -27,9 +26,7 @@ function ProductList(props) {
             {props.allProducts.map((product) => (
                 <ListItem key={product.id} product={product}/>
             ))}
-            <Link to='/product/add'>
-                <Button variant="outline-dark" className="float-right my-3"><i className="fas fa-plus" ></i></Button>
-            </Link>          
+            <Button variant="outline-dark" className="float-right my-3"><i className="fas fa-plus" ></i></Button>
         </div>
     )
 }

@@ -26,7 +26,7 @@ function ProductList(props) {
             {props.allProducts.map((product) => (
                 <ListItem key={product.id} product={product}/>
             ))}
-            <Button variant="outline-dark" className="float-right my-3"><i className="fas fa-plus" ></i></Button>
+            <Button variant="primary" className="float-right my-3"><i className="fas fa-plus" ></i></Button>
         </div>
     )
 }

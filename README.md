@@ -1,5 +1,6 @@
 # buyers-remorse-app
 A React based web application to increase personal awareness about buying choices.
+The running application can be found on [GitHub Pages](https://agiledev3.github.io/buyers-remorse-app)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

@@ -7,6 +7,11 @@ describe("App acceptance tests", () => {
       render(<App />);
     });
 
+    test('if it is in product listing page', () => {
+      const productItem = screen.getByText(/My wishlist/i);
+      expect(productItem).toBeInTheDocument();
+    })
+
     test("if it renders the first product", () => {
       const productItem = screen.getByText(/First product/i);
       expect(productItem).toBeInTheDocument();
@@ -42,6 +47,11 @@ describe("App acceptance tests", () => {
           // type required input fields
           // click save button
         });
+
+        test('if it is in product listing page', () => {
+          const productItem = screen.getByText(/My wishlist/i);
+          expect(productItem).toBeInTheDocument();
+        })
 
         test("if it renders the new product in product list", () => {
           const productItem = screen.getByText(newProduct.name);

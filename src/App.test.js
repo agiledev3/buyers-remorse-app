@@ -1,16 +1,16 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import App from "./App";
 
 describe("App acceptance tests", () => {
-  describe("when rendering the product list", () => {
+  describe("All existing user products are listed on the main page", () => {
     beforeEach(() => {
       render(<App />);
     });
 
-    test('if it is in product listing page', () => {
+    test("if it is in product listing page", () => {
       const productItem = screen.getByText(/My wishlist/i);
       expect(productItem).toBeInTheDocument();
-    })
+    });
 
     test("if it renders the first product", () => {
       const productItem = screen.getByText(/First product/i);
@@ -26,15 +26,21 @@ describe("App acceptance tests", () => {
       const productItem = screen.getByText(/Third product/i);
       expect(productItem).toBeInTheDocument();
     });
+  });
+
+  describe("It is possible to add a new product in the list", () => {
+    beforeEach(() => {
+      render(<App />);
+    });
 
     describe("when the button to add a new product is clicked", () => {
       beforeEach(() => {
         const addNewProductButton = screen.getByTitle(/Add new product/i);
-        addNewProductButton.click();
+        fireEvent.click(addNewProductButton);
       });
 
-      test("if it renders edit product title", () => {
-        const editPageTitle = screen.getByText(/Edit product/i);
+      test("if it is in the page to edit a product", () => {
+        const editPageTitle = screen.getByText(/Product Details/i);
         expect(editPageTitle).toBeInTheDocument();
       });
 
@@ -45,13 +51,19 @@ describe("App acceptance tests", () => {
 
         beforeEach(() => {
           // type required input fields
+          const productNameField = screen.getByPlaceholderText(/Product name/i);
+          fireEvent.change(productNameField, {
+            target: { value: newProduct.name },
+          });
           // click save button
+          const saveProductButton = screen.getByAltText(/Save product/i);
+          fireEvent.click(saveProductButton);
         });
 
-        test('if it is in product listing page', () => {
+        test("if it is in product listing page", () => {
           const productItem = screen.getByText(/My wishlist/i);
           expect(productItem).toBeInTheDocument();
-        })
+        });
 
         test("if it renders the new product in product list", () => {
           const productItem = screen.getByText(newProduct.name);

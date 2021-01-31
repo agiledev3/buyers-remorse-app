@@ -2,14 +2,14 @@ import React from 'react'
 import { Card, Col, Row, Button, Badge } from 'react-bootstrap'
 
 function ListItem(prop) {
-    const { id, name, daysLeft, likeCount } = prop.product;
+    const { name, daysLeft, likeCount } = prop.product;
 
     return (
         <Card className="p-3">
              <Card.Title>{name}</Card.Title>
              <Row>
                 <Col>
-                    {daysLeft == 0 ?  
+                    {daysLeft === 0 ?  
                         <Button variant="outline-dark" className="px-3"><i className="fas fa-shopping-cart"></i> Buy</Button>: 
                         <span><i className="far fa-clock"></i> {daysLeft} days left</span>}
                 </Col>

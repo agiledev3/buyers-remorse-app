@@ -7,9 +7,9 @@ describe("App acceptance tests", () => {
       render(<App />);
     });
 
-    test("if it is in product listing page", () => {
-      const productItem = screen.getByText(/My wishlist/i);
-      expect(productItem).toBeInTheDocument();
+    test("if in product listing page", () => {
+      const productListTitle = screen.getByText(/My wishlist/i);
+      expect(productListTitle).toBeInTheDocument();
     });
 
     test("if it renders the first product", () => {
@@ -39,7 +39,7 @@ describe("App acceptance tests", () => {
         fireEvent.click(addNewProductButton);
       });
 
-      test("if it is in the page to edit a product", () => {
+      test("if in edit product page", () => {
         const editPageTitle = screen.getByText(/Product Details/i);
         expect(editPageTitle).toBeInTheDocument();
       });
@@ -60,13 +60,63 @@ describe("App acceptance tests", () => {
           fireEvent.click(saveProductButton);
         });
 
-        test("if it is in product listing page", () => {
-          const productItem = screen.getByText(/My wishlist/i);
-          expect(productItem).toBeInTheDocument();
+        test("if returned to product listing page", () => {
+          const productListTitle = screen.getByText(/My wishlist/i);
+          expect(productListTitle).toBeInTheDocument();
         });
 
         test("if it renders the new product in product list", () => {
           const productItem = screen.getByText(newProduct.name);
+          expect(productItem).toBeInTheDocument();
+        });
+      });
+    });
+  });
+
+  describe("It is possible to edit an existing product in the list", () => {
+    beforeEach(() => {
+      render(<App />);
+    });
+
+    describe("when the button to edit an existing product is clicked", () => {
+      beforeEach(() => {
+        const editProductButtons = screen.getAllByTitle(/Edit product/i);
+        fireEvent.click(editProductButtons[0]);
+      });
+
+      test("if in edit product page", () => {
+        const editPageTitle = screen.getByText(/Product Details/i);
+        expect(editPageTitle).toBeInTheDocument();
+      });
+
+      test("if name field value is the existing product name", () => {
+        const productNameField = screen.getAllByDisplayValue('First product')
+        expect(productNameField).toBeInTheDocument();
+      });
+
+      describe("when changing product name and saving", () => {
+        const changedProduct = {
+          name: "My changed first product",
+        };
+
+        beforeEach(() => {
+          // type required input fields
+          const productNameField = screen.getAllByDisplayValue('First product')
+          fireEvent.change(productNameField, {
+            target: { value: changedProduct.name },
+          });
+          // click save button
+          const saveProductButton = screen.getByAltText(/Save product/i);
+          fireEvent.click(saveProductButton);
+        });
+
+        test("if returned to product listing page", () => {
+          const productListTitle = screen.getByText(/My wishlist/i);
+          expect(productListTitle).toBeInTheDocument();
+        });
+
+        test("if it renders the product item with changed name", () => {
+          const productItem = screen.getByText(changedProduct.name);
           expect(productItem).toBeInTheDocument();
         });
       });

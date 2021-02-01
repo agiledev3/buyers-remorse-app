@@ -1,11 +1,11 @@
 import React from 'react'
 import { Card, Col, Row, Button, Badge } from 'react-bootstrap'
 
-function ListItem(prop) {
-    const { id, name, daysLeft, likeCount } = prop.product;
+function ListItem(props) {
+    const { id, name, daysLeft, likeCount } = props.product;
 
     const handleEditClick = () => {
-        prop.changePage(prop.pages.EDIT_PRODUCT)
+        props.changePage(props.pages.EDIT_PRODUCT)
     }
 
     return (

@@ -10,11 +10,11 @@ class Products {
   }
 
   update(productId, productChanges) {
-
+    this._writeProductToSource(productId, productChanges)
   }
 
   create(product) {
-
+    this._writeProductToSource(null, product)
   }
 
   remove(productId) {
@@ -23,6 +23,10 @@ class Products {
 
   _readProductsFromSource() {
     return this.dataSource.read('products');
+  }
+
+  _writeProductToSource(id, product) {
+    return this.dataSource.write('products', product, id);
   }
 }
 

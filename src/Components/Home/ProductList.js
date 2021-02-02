@@ -1,6 +1,6 @@
 import React from 'react'
 import ListItem from './ListItem'
-import { Card, Col, Row, Button, Badge } from 'react-bootstrap'
+import { Card, Col, Row, Button } from 'react-bootstrap'
 
 function ProductList(props) {
     return (

@@ -1,8 +1,14 @@
 import React from 'react'
 import ListItem from './ListItem'
-import { Card, Col, Row, Button, Badge } from 'react-bootstrap'
+import Pages from '../PageSelection/Pages'
+import { Card, Col, Row, Button } from 'react-bootstrap'
 
 function ProductList(props) {
+
+    const handleAddClick = () => {
+        props.changePage(Pages.EDIT_PRODUCT)
+    }
+
     return (
         <div>
             <Card className='p-2'>
@@ -24,9 +30,11 @@ function ProductList(props) {
                 </Card.Title>
             </Card>
             {props.allProducts.map((product) => (
-                <ListItem key={product.id} product={product}/>
+                <ListItem key={product.id} product={product} changePage={props.changePage}/>
             ))}
-            <Button variant="primary" className="float-right my-3" title="Add new product"><i className="fas fa-plus" ></i></Button>
+            <Button variant="primary" className="float-right my-3" title="Add new product" onClick={handleAddClick}>
+                <i className="fas fa-plus" ></i>
+            </Button>
         </div>
     )
 }

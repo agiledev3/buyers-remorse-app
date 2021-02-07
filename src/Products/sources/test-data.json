@@ -4,19 +4,31 @@
       "id": 1,
       "name": "First product",
       "daysLeft" : 2,
-      "likeCount" : 3
+      "likeCount" : 3,
+      "linkToBuy": "www.lorem.ipsum",
+      "reasonToBuy": "dolor",
+      "reminderPeriod": 7,
+      "coolingPeriod": 30
     },
     {
       "id": 2,
       "name": "Second product",
       "daysLeft" : 4,
-      "likeCount" : 1
+      "likeCount" : 1,
+      "linkToBuy": "www.lorem.ipsum",
+      "reasonToBuy": "dolor",
+      "reminderPeriod": 7,
+      "coolingPeriod": 30
     },
     {
       "id": 3,
       "name": "Third product",
       "daysLeft" : 0,
-      "likeCount" : 5
+      "likeCount" : 5,
+      "linkToBuy": "www.lorem.ipsum",
+      "reasonToBuy": "dolor",
+      "reminderPeriod": 7,
+      "coolingPeriod": 30
     }
   ]
 }

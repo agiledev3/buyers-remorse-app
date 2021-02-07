@@ -1,6 +1,6 @@
-import { useState } from "react";
+//import { useState } from "react";
 
-import Home from "./Components/Home";
+import PageSelection from "./Components/PageSelection/PageSelection.js"
 import { Products, TestSource } from "./Products";
 
 import Container from 'react-bootstrap/Container'
@@ -9,14 +9,12 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 const products = new Products(TestSource);
 
 function App() {
-  const [activePage, setActivePage] = useState(App.pages.HOME);
+  {/* const [activePage, setActivePage] = useState(App.pages.HOME); */}
   const allProducts = products.getAll();
   return (
     <Container>
       <header>
-        {activePage === App.pages.HOME && (
-          <Home allProducts={allProducts} changePage={setActivePage} />
-        )}
+        <PageSelection pages={App.pages} allProducts={allProducts}/>
       </header>
     </Container>
   );

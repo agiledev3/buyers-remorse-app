@@ -24,7 +24,7 @@ function ProductList(props) {
                 </Card.Title>
             </Card>
             {props.allProducts.map((product) => (
-                <ListItem key={product.id} product={product}/>
+                <ListItem key={product.id} product={product} changePage={props.changePage}/>
             ))}
             <Button variant="primary" className="float-right my-3"><i className="fas fa-plus" ></i></Button>
         </div>

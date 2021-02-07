@@ -1,8 +1,13 @@
 import React from 'react'
 import { Card, Col, Row, Button, Badge } from 'react-bootstrap'
+import Pages from '../PageSelection/Pages'
 
-function ListItem(prop) {
-    const { name, daysLeft, likeCount } = prop.product;
+function ListItem(props) {
+    const { id, name, daysLeft, likeCount } = props.product;
+
+    const handleEditClick = () => {
+        props.changePage(Pages.EDIT_PRODUCT)
+    }
 
     return (
         <Card className="p-3">
@@ -14,7 +19,7 @@ function ListItem(prop) {
                         <span><i className="far fa-clock"></i> {daysLeft} days left</span>}
                 </Col>
                 <Col className="text-right">
-                    <Button variant="outline-dark"><i className="fas fa-pen" ></i></Button>
+                    <Button variant="outline-dark" onClick={handleEditClick}><i className="fas fa-pen" ></i></Button>
                     <Button variant="outline-dark" style={{paddingLeft:'0.55em', paddingRight:'0.2em'}}>
                         <i className="fas fa-thumbs-up"></i>
                         <sup><Badge variant="light">{likeCount}</Badge></sup>

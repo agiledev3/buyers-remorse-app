@@ -56,7 +56,7 @@ describe("App acceptance tests", () => {
             target: { value: newProduct.name },
           });
           // click save button
-          const saveProductButton = screen.getByAltText(/Save product/i);
+          const saveProductButton = screen.getByTitle(/Save product/i);
           fireEvent.click(saveProductButton);
         });
 

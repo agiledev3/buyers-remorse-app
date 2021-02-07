@@ -9,8 +9,9 @@ function ListItem(props) {
         props.changePage(Pages.EDIT_PRODUCT)
     }
 
+    
     return (
-        <Card className="p-3">
+        <Card className="p-3" id={id}>
              <Card.Title>{name}</Card.Title>
              <Row>
                 <Col>

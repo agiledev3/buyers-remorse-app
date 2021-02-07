@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import React,{Fragment} from 'react';
+import { Fragment } from 'react';
 import Home from '../Home'
 import EditProduct from '../EditProduct'
 //list of pages in the app
@@ -14,10 +14,10 @@ const PageSelection = (props) => {
     const [selectedPage, setSelectedPage] = useState(Pages.HOME)
 
     return (
-        <React.Fragment>
+        <Fragment>
             {selectedPage === Pages.HOME && <Home allProducts={props.allProducts} changePage={setSelectedPage} /> }
             {selectedPage === Pages.EDIT_PRODUCT && <EditProduct changePage={setSelectedPage}/> }
-        </React.Fragment>
+        </Fragment>
     )
 }
 

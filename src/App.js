@@ -9,7 +9,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 const products = new Products(TestSource);
 
 function App() {
-  {/* const [activePage, setActivePage] = useState(App.pages.HOME); */}
   const allProducts = products.getAll();
   return (
     <Container>

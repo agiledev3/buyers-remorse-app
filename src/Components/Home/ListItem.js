@@ -10,7 +10,7 @@ function ListItem(props) {
     }
 
     return (
-        <Card className="p-3" id={id}>
+        <Card className="p-3" id={id} key={id}>
              <Card.Title>{name}</Card.Title>
              <Row>
                 <Col>

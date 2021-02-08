@@ -13,7 +13,7 @@ const EditProduct = (props) => {
 		else{
 			props.createProduct(product)
 		}
-        props.changePage(Pages.HOME);
+		props.changePage(Pages.HOME);
 	}
 
     const resetAndGoHome = () =>{
@@ -56,6 +56,7 @@ const EditProduct = (props) => {
 						placeholder="Product name ..."
 						name="name"
 						id="name"
+						data-testid="name"
 						required/>
 				</Form.Group>
 				<Form.Group>

@@ -15,7 +15,7 @@ function ListItem(props) {
              <Card.Title>{name}</Card.Title>
              <Row>
                 <Col>
-                    {daysLeft == 0 ?  
+                    {daysLeft === 0 ?  
                         <Button variant="btn btn-outline-success" className="px-3"><i className="fas fa-minus-circle"></i> Forget</Button>: 
                         <span><i className="far fa-clock"></i> {daysLeft} days left</span>}
                 </Col>

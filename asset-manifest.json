@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/buyers-remorse-app/static/js/main.a258f737.chunk.js",
-    "main.js.map": "/buyers-remorse-app/static/js/main.a258f737.chunk.js.map",
+    "main.js": "/buyers-remorse-app/static/js/main.d658e50b.chunk.js",
+    "main.js.map": "/buyers-remorse-app/static/js/main.d658e50b.chunk.js.map",
     "runtime-main.js": "/buyers-remorse-app/static/js/runtime-main.45c33ee1.js",
     "runtime-main.js.map": "/buyers-remorse-app/static/js/runtime-main.45c33ee1.js.map",
     "static/css/2.150d169a.chunk.css": "/buyers-remorse-app/static/css/2.150d169a.chunk.css",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.45c33ee1.js",
     "static/css/2.150d169a.chunk.css",
     "static/js/2.fff29caf.chunk.js",
-    "static/js/main.a258f737.chunk.js"
+    "static/js/main.d658e50b.chunk.js"
   ]
 }

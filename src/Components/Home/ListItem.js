@@ -16,16 +16,15 @@ function ListItem(props) {
              <Row>
                 <Col>
                     {daysLeft === 0 ?  
-                        <Button variant="outline-dark" className="px-3"><i className="fas fa-shopping-cart"></i> Buy</Button>: 
+                        <Button variant="btn btn-outline-success" className="px-3"><i className="fas fa-minus-circle"></i> Forget</Button>: 
                         <span><i className="far fa-clock"></i> {daysLeft} days left</span>}
                 </Col>
                 <Col className="text-right">
-                    <Button variant="outline-dark" onClick={handleEditClick}><i className="fas fa-pen" ></i></Button>
-                    <Button variant="outline-dark" style={{paddingLeft:'0.55em', paddingRight:'0.2em'}}>
+                    <Button variant="outline-secondary" onClick={handleEditClick}><i className="fas fa-pen" ></i></Button>
+                    <Button variant="success" style={{paddingLeft:'0.55em', paddingRight:'0.2em', marginLeft:'0.3em'}}>
                         <i className="fas fa-thumbs-up"></i>
                         <sup><Badge variant="light">{likeCount}</Badge></sup>
                     </Button>
-                    <Button variant="outline-dark"><i className="fas fa-trash-alt" ></i></Button>
                 </Col>
             </Row>
         </Card>        

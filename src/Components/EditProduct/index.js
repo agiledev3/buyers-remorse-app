@@ -6,7 +6,7 @@ import { Col, Row, Card, Button, Form } from 'react-bootstrap'
 const EditProduct = (props) => {
 	const { handleChange, handleReset, product } = useForm(props.product);
 	const handleSubmit = (e) =>{
-		e.preventDefault();
+		e.preventDefault();		
 		if(product.id){
 			props.updateProduct(product.id, product)
 		}
@@ -14,11 +14,13 @@ const EditProduct = (props) => {
 			props.createProduct(product)
 		}
 		props.changePage(Pages.HOME);
+		props.setCurrentProduct(null);
 	}
 
     const resetAndGoHome = () =>{
         handleReset();
         props.changePage(Pages.HOME);
+		props.setCurrentProduct(null);
     }
 
 	return(

@@ -30,7 +30,7 @@ function ProductList(props) {
                 </Card.Title>
             </Card>
             {props.allProducts.map((product) => (
-                <ListItem key={product.id} product={product} changePage={props.changePage}/>
+                <ListItem key={product.id} product={product} changePage={props.changePage} setCurrentProduct={props.setCurrentProduct}/>
             ))}
             <Button variant="primary" className="float-right my-3" title="Add new product" onClick={handleAddClick}>
                 <i className="fas fa-plus" ></i>

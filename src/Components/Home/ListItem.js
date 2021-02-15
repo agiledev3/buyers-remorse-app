@@ -6,7 +6,8 @@ function ListItem(props) {
     const { id, name, daysLeft, likeCount } = props.product;
 
     const handleEditClick = () => {
-        props.changePage(Pages.EDIT_PRODUCT)
+        props.changePage(Pages.EDIT_PRODUCT)   
+        props.setCurrentProduct(props.product)             
     }
 
     return (

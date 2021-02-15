@@ -15,8 +15,16 @@ const PageSelection = (props) => {
 
     return (
         <Fragment>
-            {selectedPage === Pages.HOME && <Home allProducts={props.allProducts} changePage={setSelectedPage} /> }
-            {selectedPage === Pages.EDIT_PRODUCT && <EditProduct changePage={setSelectedPage} createProduct={props.createProduct} updateProduct={props.updateProduct}/> }
+            {selectedPage === Pages.HOME && 
+                <Home allProducts={props.allProducts} 
+                      setCurrentProduct={props.setCurrentProduct}
+                      changePage={setSelectedPage} /> }
+            {selectedPage === Pages.EDIT_PRODUCT && 
+                <EditProduct product={props.currentProduct}        
+                            setCurrentProduct={props.setCurrentProduct}                  
+                            changePage={setSelectedPage} 
+                            createProduct={props.createProduct} 
+                            updateProduct={props.updateProduct}/> }
         </Fragment>
     )
 }

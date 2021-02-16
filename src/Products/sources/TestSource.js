@@ -4,7 +4,7 @@ const TestSource = {
   read(name) {
     //populate daysLeft property for each item
     testData[name].forEach((element) => {
-      element.daysLeft = calculateDaysLeft(element.createdAt);
+      element.daysLeft = calculateDaysLeft(element.createdAt, element.coolingPeriod);
     });
 
     return testData[name];
@@ -19,7 +19,7 @@ const TestSource = {
     else {
       entity.id = calculateNextId(testData[name]);
       entity.likeCount = 0;
-      entity.createAt = new Date().toISOString();
+      entity.createdAt = new Date().toISOString();
       entity.daysLeft = entity.coolingPeriod;
     }
     //persist entity
@@ -28,10 +28,12 @@ const TestSource = {
 };
 
 //createdAt: string in ISO format
-const calculateDaysLeft = (createdAt) => {
+const calculateDaysLeft = (createdAt, coolingPeriod) => {
+  debugger
   let nowMs = new Date().getTime();
   let createdAtMs = Date.parse(createdAt);
-  let diffDays = (nowMs - createdAtMs) / 86400000;
+  let coolingDeadline = createdAtMs + coolingPeriod * 86400000;
+  let diffDays = (coolingDeadline - nowMs) / 86400000;
   //if difference is larger than 1 day i.e. cooling period hasn't lapsed yet - find value in days
   return diffDays > 1 ? Math.floor(diffDays) : 0;
 };

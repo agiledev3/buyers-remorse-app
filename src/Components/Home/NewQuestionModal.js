@@ -1,11 +1,10 @@
-import React from 'react'
-import { Modal, Form, Button } from 'react-bootstrap'
+import React from "react";
+import { Modal, Form, Button } from "react-bootstrap";
 
-const NewQuestionModal = props => {
-
+const NewQuestionModal = (props) => {
   return (
-    <Modal.Dialog>
-      <Modal.Header closeButton>
+    <Modal show={props.show} onHide={props.onHide}>
+      <Modal.Header>
         <Modal.Title>New Question</Modal.Title>
       </Modal.Header>
 
@@ -13,16 +12,32 @@ const NewQuestionModal = props => {
         <Form>
           <Form.Group controlId="formQuestion">
             <Form.Label>{props.question}</Form.Label>
-            <Form.Control type="text" placeholder="Enter your answer..." />
+            <Form.Control
+              type="text"
+              placeholder="Enter your answer..."
+              value={props.answer}
+              onChange={e => props.onAnswerChange(e.target.value)}
+            />
           </Form.Group>
         </Form>
       </Modal.Body>
 
       <Modal.Footer>
-        <Button variant="primary" onClick={props.onSaveClick}>Save and close</Button>
+        <Button
+          variant="primary"
+          onClick={() =>
+            props.onSaveClick({
+              productId: props.productId,
+              question: props.question,
+              answer: props.answer,
+            })
+          }
+        >
+          Save and close
+        </Button>
       </Modal.Footer>
-    </Modal.Dialog>
-  )
-}
+    </Modal>
+  );
+};
 
 export default NewQuestionModal;

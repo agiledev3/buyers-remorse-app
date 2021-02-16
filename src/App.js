@@ -1,14 +1,13 @@
-//import { useState } from "react";
-
 import PageSelection from "./Components/PageSelection/PageSelection.js";
 import { Products, TestSource } from "./Products";
 
 import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-const products = new Products(TestSource);
+import {useState} from "react";
 
 function App() {
+  const [updateCount, setUpdateCount] = useState(0);
+  const products = new Products(TestSource, () => setUpdateCount(updateCount + 1));
   const allProducts = products.getAll();
   const createProduct = products.create.bind(products);
   const updateProduct = products.update.bind(products);

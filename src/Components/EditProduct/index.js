@@ -7,7 +7,6 @@ const EditProduct = (props) => {
 	const { handleChange, handleReset, product } = useForm(props.product);
 	const handleSubmit = (e) =>{
 		e.preventDefault();
-		debugger
 		if(product.id){
 			props.updateProduct(product.id, product)
 		}

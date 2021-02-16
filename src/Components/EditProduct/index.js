@@ -13,7 +13,7 @@ const EditProduct = (props) => {
 		else{
 			props.createProduct(product)
 		}
-        props.changePage(Pages.HOME);
+		props.changePage(Pages.HOME);
 	}
 
     const resetAndGoHome = () =>{
@@ -36,7 +36,7 @@ const EditProduct = (props) => {
 		                 </Col>
 		                    <Col xs={{span:2}} style={{fontSize:"2em"}}>
 		                   	<i className="far fa-user-circle align-middle"></i>
-		                 </Col> 
+		                 </Col>
 		            </Row>
 		            <Row>
 		                <Col sm={{span:2}}></Col>
@@ -55,7 +55,8 @@ const EditProduct = (props) => {
 						value={product.name}
 						placeholder="Product name ..."
 						name="name"
-						id="name" 
+						id="name"
+						data-testid="name"
 						required/>
 				</Form.Group>
 				<Form.Group>
@@ -64,8 +65,8 @@ const EditProduct = (props) => {
 						onChange={handleChange}
 						value={product.linkToBuy}
 						placeholder="Link to a website ..."
-						name="linkToBuy" 
-						id="linkToBuy" 
+						name="linkToBuy"
+						id="linkToBuy"
 						/>
 				</Form.Group>
 				<Form.Group>
@@ -92,8 +93,8 @@ const EditProduct = (props) => {
 						id="reminderPeriod"
 						type="number"
 						min="1"
-						max="30"			
-						style={{maxWidth:"5rem"}}			
+						max="30"
+						style={{maxWidth:"5rem"}}
 						 />
 				</Form.Group>
 				<Col lg="2"></Col>
@@ -108,7 +109,7 @@ const EditProduct = (props) => {
 						type="number"
 						min="1"
 						max="90"
-						style={{maxWidth:"5rem"}}	
+						style={{maxWidth:"5rem"}}
 						 />
 				</Form.Group>
 				</Form.Row>
@@ -119,14 +120,14 @@ const EditProduct = (props) => {
 					</Button>
 				</Col>
 				<Col xs="auto">
-					<Button variant="outline-success" aligned="right aligned" type="submit" size="lg">
+					<Button variant="outline-success" aligned="right aligned" type="submit" size="lg" title="Save product">
 						<i className="fas fa-check"></i>
 					</Button>
 				</Col>
-				</Form.Row>		
-			</Form>		
+				</Form.Row>
+			</Form>
 		</React.Fragment>
 	);
 };
 
-export default EditProduct; 
+export default EditProduct;

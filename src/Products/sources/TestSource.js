@@ -29,7 +29,6 @@ const TestSource = {
 
 //createdAt: string in ISO format
 const calculateDaysLeft = (createdAt, coolingPeriod) => {
-  debugger
   let nowMs = new Date().getTime();
   let createdAtMs = Date.parse(createdAt);
   let coolingDeadline = createdAtMs + coolingPeriod * 86400000;

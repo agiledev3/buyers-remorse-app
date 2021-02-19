@@ -1,0 +1,45 @@
+@startuml
+-- Research --
+[Project ideas] lasts 7 days
+[SWOT Analysis] lasts 7 days
+[Research questions] lasts 3 days
+[Interviews] lasts 4 days
+[Paper research] lasts 4 days
+[Competitors research] lasts 4 days
+[Personas] lasts 3 days
+[Use-cases] lasts 4 days
+-- First iteration --
+[Low prototype] lasts 3 days
+[User interview] lasts 4 days
+-- Second iteration --
+[Medium prototype] lasts 7 days
+[Final report] lasts 7 days
+
+2020-12-24 is closed
+2020-12-25 is closed
+2020-12-31 is closed
+2021-01-01 is closed
+
+Project starts 2020-11-15
+
+[1st meeting] happens at 2020-11-15
+[2nd meeting] happens at 2020-11-22
+[3rd meeting] happens at 2020-11-29
+[4th meeting] happens at 2020-12-06
+[5th meeting] happens at 2020-12-13
+[Deadline] happens at 2021-01-11
+
+[Project ideas] starts 2020-11-15
+[SWOT Analysis] starts at [Project ideas]'s end
+[Research questions] starts at [SWOT Analysis]'s end
+[Interviews] starts at [Research questions]'s end
+[Paper research] starts at [Research questions]'s end
+[Competitors research] starts at [Research questions]'s end
+[Personas] starts at [Interviews]'s end
+[Use-cases] starts at [Personas]'s end
+[Low prototype] starts at [Use-cases]'s end
+[User interview] starts at [Low prototype]'s end
+[Medium prototype] starts at [User interview]'s end
+[Final report] starts at [Medium prototype]'s end
+--
+@enduml

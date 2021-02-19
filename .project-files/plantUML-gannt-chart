@@ -1,47 +1,92 @@
-@startuml
+@startgantt
+Project starts 2020-11-15
+
 -- Research --
-[Project ideas] lasts 7 days
-[SWOT Analysis] lasts 7 days
-[Research questions] lasts 3 days
-[Interviews] lasts 4 days
-[Paper research] lasts 4 days
-[Competitors research] lasts 4 days
-[Personas] lasts 3 days
-[Use-cases] lasts 4 days
+
+[Pre-meeting idea generation] happens at 2020-11-15
+[Project ideas] lasts 7 days and is 100% complete
+
+[1st meeting] happens at 2020-11-22
+[SWOT Analysis] lasts 7 days and is 100% complete
+
+
+[2nd meeting] happens at 2020-11-29
+[Research questions] lasts 3 days and is 100% complete
+[Interviews] lasts 4 days and is 100% complete
+[Paper research] lasts 4 days and is 100% complete
+[Competitors research] lasts 4 days and is 100% complete
+
+[3rd meeting] happens at 2020-12-06
+[Personas] lasts 3 days and is 100% complete
+[Use-cases] lasts 4 days and is 100% complete
+
 -- First iteration --
-[Low prototype] lasts 3 days
-[User interview] lasts 4 days
+[4th meeting] happens at 2020-12-13
+[Low prototype] lasts 3 days and is 100% complete
+[User interview] lasts 4 days and is 100% complete
+
 -- Second iteration --
-[Medium prototype] lasts 7 days
-[Final report] lasts 7 days
+[5th meeting] happens at 2020-12-20
+[6th meeting] happens at 2020-12-27
+[Medium prototype] lasts 7 days and is 100% complete
+
+-- Report completion --
+[7th meeting] happens at 2021-01-03
+[Proposal report writing] lasts 7 days and is 100% complete
+[Report review] lasts 3 days and is 100% complete
+
+[8th meeting - report finalisation and submission] happens at 2021-01-10
+[Report submission] lasts 1 days and is 100% complete
+[Mid-term Deadline] happens at 2021-01-11
+
+[React intro & familiarisation] lasts 18 days and is 100% complete
+
+-- Third iteration --
+[9th meeting] happens at 2021-01-17
+[Deliv. build plan] lasts 7 days and is 0% complete
+
+[10th meeting] happens at 2021-01-24
+[Deliv.1 build] lasts 7 days and is colored in DarkGreen and is 0% complete
+[Deliv.1 fback] lasts 6 days and is colored in DarkGreen and is 0% complete
+[Deliv.1 fixes] lasts 7 days and is colored in DarkGreen and is 0% complete
+
+-- Fourth iteration --
+[11th meeting] happens at 2021-01-31
+[Deliv.2 build] lasts 7 days and is colored in DarkOrange and is 0% complete
+[Deliv.2 fback] lasts 6 days and is colored in DarkOrange and is 0% complete
+[Deliv.2 fixes] lasts 7 days and is colored in DarkOrange and is 0% complete
+
+-- Fifth iteration --
+[12th meeting] happens at 2021-02-07
+[Deliv.3 build] lasts 7 days and is colored in DarkCyan and is 0% complete
+[Deliv.3 fback] lasts 6 days and is colored in DarkCyan and is 0% complete
+[Deliv.3 fixes] lasts 7 days and is colored in DarkCyan and is 0% complete
+
+-- Sixth iteration --
+[13th meeting] happens at 2021-02-14
+[Deliv.4 build] lasts 7 days and is colored in DarkGreen and is 0% complete
+[Deliv.4 fback] lasts 6 days and is colored in DarkGreen and is 0% complete
+[Deliv.4 fixes] lasts 7 days and is colored in DarkGreen and is 0% complete
+
+-- Seventh iteration --
+[14th meeting] happens at 2021-02-21
+[Deliv.5 build] lasts 7 days and is colored in DarkBlue and is 0% complete
+[Deliv.5 fback] lasts 6 days and is colored in DarkBlue and is 0% complete
+[15th meeting] happens at 2021-02-28
+[Deliv.5 fixes] lasts 7 days and is colored in DarkBlue and is 0% complete
+
+[16th meeting] happens at 2021-03-07
+[17th meeting] happens at 2021-03-14
+[Final submis. prep] lasts 8 days and is 0% complete
+-- Meetings, deadlines and milestones --
 
 2020-12-24 is closed
 2020-12-25 is closed
 2020-12-31 is closed
 2021-01-01 is closed
 
-Project starts 2020-11-15
-
-[1st meeting] happens at 2020-11-15
-[2nd meeting] happens at 2020-11-22
-[3rd meeting] happens at 2020-11-29
-[4th meeting] happens at 2020-12-06
-[5th meeting] happens at 2020-12-13
-[6th meeting] happens at 2020-12-20
-[7th meeting] happens at 2020-12-27
-[8th meeting] happens at 2021-01-03
-[9th meeting] happens at 2021-01-10
-[10th meeting] happens at 2021-01-17
-[11th meeting] happens at 2021-01-24
-[12th meeting] happens at 2021-01-31
-[13th meeting] happens at 2021-02-07
-[14th meeting] happens at 2021-02-14
-[15th meeting] happens at 2021-02-21
-[16th meeting] happens at 2021-02-28
-[17th meeting] happens at 2021-03-07
-[18th meeting] happens at 2021-03-14
-[Mid-term Deadline] happens at 2021-01-11
 [Final Deadline] happens at 2021-03-15
+
 
 [Project ideas] starts 2020-11-15
 [SWOT Analysis] starts at [Project ideas]'s end
@@ -54,6 +99,29 @@ Project starts 2020-11-15
 [Low prototype] starts at [Use-cases]'s end
 [User interview] starts at [Low prototype]'s end
 [Medium prototype] starts at [User interview]'s end
-[Final report] starts at [Medium prototype]'s end
+[Proposal report writing] starts at [Medium prototype]'s end
+[Report review] starts at [Proposal report writing]'s end
+[Report submission] starts at [Report review]'s end
+[React intro & familiarisation] starts 2020-12-20
+[Deliv. build plan] starts 2021-01-11
+[Deliv.1 build] starts at [Deliv. build plan]'s end
+[Deliv.2 build] starts at [Deliv.1 build]'s end
+[Deliv.3 build] starts at [Deliv.2 build]'s end
+[Deliv.4 build] starts at [Deliv.3 build]'s end
+[Deliv.5 build] starts at [Deliv.4 build]'s end
+[Deliv.1 fback] starts at [Deliv.1 build]'s end
+[Deliv.2 fback] starts at [Deliv.2 build]'s end
+[Deliv.3 fback] starts at [Deliv.3 build]'s end
+[Deliv.4 fback] starts at [Deliv.4 build]'s end
+[Deliv.5 fback] starts at [Deliv.5 build]'s end
+[Deliv.1 fixes] starts at [Deliv.1 fback]'s end
+[Deliv.2 fixes] starts at [Deliv.2 fback]'s end
+[Deliv.3 fixes] starts at [Deliv.3 fback]'s end
+[Deliv.4 fixes] starts at [Deliv.4 fback]'s end
+[Deliv.5 fixes] starts at [Deliv.5 fback]'s end
+[Final submis. prep] starts at [Deliv.5 fixes]'s end
+ 
+2021-01-11 is colored in FireBrick
+2021-03-15 is colored in FireBrick
 --
-@enduml
+@endgantt

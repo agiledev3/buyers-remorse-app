@@ -1,6 +1,6 @@
 @startgantt
 Project starts 2020-11-15
-
+printscale daily
 -- Research --
 
 [Pre-meeting idea generation] happens at 2020-11-15
@@ -8,7 +8,6 @@ Project starts 2020-11-15
 
 [1st meeting] happens at 2020-11-22
 [SWOT Analysis] lasts 7 days and is 100% complete
-
 
 [2nd meeting] happens at 2020-11-29
 [Research questions] lasts 3 days and is 100% complete
@@ -46,39 +45,34 @@ Project starts 2020-11-15
 [Deliv. build plan] lasts 7 days and is 100% complete
 
 [10th meeting] happens at 2021-01-24
-[Deliv.1 build] lasts 7 days and is colored in DarkGreen and is 100% complete
-[Deliv.1 fback] lasts 6 days and is colored in DarkGreen and is 100% complete
-[Deliv.1 fixes] lasts 7 days and is colored in DarkGreen and is 50% complete
+[Milestone 1 build] lasts 14 days and is colored in Cyan and is 80% complete
+[1. f.back] as [M1 f.back] lasts 4 days and is colored in Cyan and is 0% complete
+[1. update] as [M1 update] lasts 5 days and is colored in Cyan and is 0% complete
+[1. testing] as [M1 testing] is colored in Cyan and is 50% complete
+[11th meeting] happens at 2021-01-31
+[12th meeting] happens at 2021-02-07
 
 -- Fourth iteration --
-[11th meeting] happens at 2021-01-31
-[Deliv.2 build] lasts 7 days and is colored in DarkOrange and is 50% complete
-[Deliv.2 fback] lasts 6 days and is colored in DarkOrange and is 0% complete
-[Deliv.2 fixes] lasts 7 days and is colored in DarkOrange and is 0% complete
+[Milestone 2 build] lasts 14 days and is colored in Lime and is 50% complete
+[2. f.back] as [M2 f.back] lasts 4 days and is colored in Lime and is 0% complete
+[2. update] as [M2 update] lasts 5 days and is colored in Lime and is 0% complete
+[2. testing] as [M2 testing] is colored in Lime and is 50% complete
 
--- Fifth iteration --
-[12th meeting] happens at 2021-02-07
-[Deliv.3 build] lasts 7 days and is colored in DarkCyan and is 0% complete
-[Deliv.3 fback] lasts 6 days and is colored in DarkCyan and is 0% complete
-[Deliv.3 fixes] lasts 7 days and is colored in DarkCyan and is 0% complete
-
--- Sixth iteration --
 [13th meeting] happens at 2021-02-14
-[Deliv.4 build] lasts 7 days and is colored in DarkGreen and is 0% complete
-[Deliv.4 fback] lasts 6 days and is colored in DarkGreen and is 0% complete
-[Deliv.4 fixes] lasts 7 days and is colored in DarkGreen and is 0% complete
-
--- Seventh iteration --
 [14th meeting] happens at 2021-02-21
-[Deliv.5 build] lasts 7 days and is colored in DarkBlue and is 0% complete
-[Deliv.5 fback] lasts 6 days and is colored in DarkBlue and is 0% complete
-[15th meeting] happens at 2021-02-28
-[Deliv.5 fixes] lasts 7 days and is colored in DarkBlue and is 0% complete
 
+
+
+
+-- Final Submission --
+[Final report writing] is 20% complete
+[Submit] lasts 4 days and is 0% complete
+[15th meeting] happens at 2021-02-28
 [16th meeting] happens at 2021-03-07
 [17th meeting] happens at 2021-03-14
-[Final submis. prep] lasts 8 days and is 0% complete
--- Meetings, deadlines and milestones --
+
+-- Wrap up --
+[wrap-up] lasts 4 days and is 0% complete
 
 2020-12-24 is closed
 2020-12-25 is closed
@@ -102,25 +96,23 @@ Project starts 2020-11-15
 [Proposal report writing] starts at [Medium prototype]'s end
 [Report review] starts at [Proposal report writing]'s end
 [Report submission] starts at [Report review]'s end
-[React intro & familiarisation] starts 2020-12-20
-[Deliv. build plan] starts 2021-01-11
-[Deliv.1 build] starts at [Deliv. build plan]'s end
-[Deliv.2 build] starts at [Deliv.1 build]'s end
-[Deliv.3 build] starts at [Deliv.2 build]'s end
-[Deliv.4 build] starts at [Deliv.3 build]'s end
-[Deliv.5 build] starts at [Deliv.4 build]'s end
-[Deliv.1 fback] starts at [Deliv.1 build]'s end
-[Deliv.2 fback] starts at [Deliv.2 build]'s end
-[Deliv.3 fback] starts at [Deliv.3 build]'s end
-[Deliv.4 fback] starts at [Deliv.4 build]'s end
-[Deliv.5 fback] starts at [Deliv.5 build]'s end
-[Deliv.1 fixes] starts at [Deliv.1 fback]'s end
-[Deliv.2 fixes] starts at [Deliv.2 fback]'s end
-[Deliv.3 fixes] starts at [Deliv.3 fback]'s end
-[Deliv.4 fixes] starts at [Deliv.4 fback]'s end
-[Deliv.5 fixes] starts at [Deliv.5 fback]'s end
-[Final submis. prep] starts at [Deliv.5 fixes]'s end
- 
+[React intro & familiarisation] starts 2021-01-03
+[Final report writing] starts 2021-02-04 and ends 2021-03-11
+[Submit] starts at [Final report writing]'s end
+
+[Deliv. build plan] starts at [React intro & familiarisation]'s end
+
+[Milestone 1 build] starts at [Deliv. build plan]'s end
+[M1 f.back] starts at [Milestone 1 build]'s end
+[M1 update] starts at [M1 f.back]'s end
+[M1 testing] starts at [Milestone 1 build]'s end and ends at [M1 update]'s end
+[Milestone 2 build] starts at [Milestone 1 build]'s end
+[M2 f.back] starts at [Milestone 2 build]'s end
+[M2 update] starts at [M2 f.back]'s end 
+[M2 testing] starts at [Milestone 2 build]'s end and ends at [M2 update]'s end
+
+[wrap-up] starts 2021-03-16
+
 2021-01-11 is colored in FireBrick
 2021-03-15 is colored in FireBrick
 --

@@ -1,8 +1,9 @@
 import TestSource from './sources/TestSource';
 
 class Products {
-  constructor(DataSource) {
+  constructor(DataSource, DateService) {
     this.dataSource = DataSource;
+    this.dateService = DateService;
   }
 
   getAll() {
@@ -39,14 +40,13 @@ class Products {
   _writeProductToSource(id, product) {
     return this.dataSource.write('products', product, id);
   }
-
-  _msInDay = 86400000;
+  
   //createdAt: string in ISO format
   _calculateDaysLeft = (createdAt, coolingPeriod) => {
-    let nowMs = new Date().getTime();
+    let nowMs = this.dateService.getCurrent().getTime();
     let createdAtMs = Date.parse(createdAt);
-    let coolingDeadline = createdAtMs + coolingPeriod * this._msInDay;
-    let diffDays = (coolingDeadline - nowMs) / this._msInDay;
+    let coolingDeadline = createdAtMs + coolingPeriod * this.dateService.msInDay();
+    let diffDays = (coolingDeadline - nowMs) / this.dateService.msInDay();
     //if difference is larger than 1 day i.e. cooling period hasn't lapsed yet - find value in days
     return diffDays > 1 ? Math.floor(diffDays) : 0;
   };

@@ -2,11 +2,12 @@
 
 import PageSelection from "./Components/PageSelection/PageSelection.js";
 import { Products, TestSource } from "./Products";
+import DateService from "./Utils/DateService"
 
 import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const products = new Products(TestSource);
+const products = new Products(TestSource, new DateService());
 
 function App() {
   const allProducts = products.getAll();

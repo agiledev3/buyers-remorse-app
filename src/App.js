@@ -1,12 +1,12 @@
 //import { useState } from "react";
 
 import PageSelection from "./Components/PageSelection/PageSelection.js";
-import { Products, TestSource } from "./Products";
+import { Products, LocalStorageSource } from "./Products";
 
 import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const products = new Products(TestSource);
+const products = new Products(LocalStorageSource);
 
 function App() {
   const allProducts = products.getAll();

@@ -1,4 +1,4 @@
-import TestSource from './sources/TestSource';
+import LocalStorageSource from './sources/LocalStorageSource';
 
 class Products {
   constructor(DataSource) {
@@ -30,4 +30,4 @@ class Products {
   }
 }
 
-export { Products, TestSource };
+export { Products, LocalStorageSource };

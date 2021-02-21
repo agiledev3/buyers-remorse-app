@@ -3,7 +3,7 @@ import { Card, Col, Row, Button, Badge } from "react-bootstrap";
 import Pages from "../PageSelection/Pages";
 
 function ListItem(props) {
-  const { id, name, daysLeft, questions } = props.product;
+  const { id, name, daysLeft, likeCount } = props.product;
 
     const handleEditClick = () => {
         props.changePage(Pages.EDIT_PRODUCT)
@@ -45,7 +45,7 @@ function ListItem(props) {
             <i className="fas fa-thumbs-up"></i>
             <sup>
               <Badge variant="light">
-                {props.product.likeCount}
+                {likeCount}
               </Badge>
             </sup>
           </Button>

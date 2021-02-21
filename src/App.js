@@ -10,7 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const products =
   process.env.NODE_ENV !== 'test'
     ? new Products(LocalStorageSource, new DateService())
-    : new Products(TestSource, new DateService());
+    : new Products(TestSource.initialize(), new DateService());
 function App() {
   const [allProducts, setAllProducts] = useState(products.getAll());
   const [currentProduct, setCurrentProduct] = useState(null);

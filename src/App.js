@@ -1,27 +1,29 @@
 import { useState } from "react";
 
 import PageSelection from "./Components/PageSelection/PageSelection.js";
-import { Products, TestSource } from "./Products";
-import DateService from "./Utils/DateService"
+import { Products, LocalStorageSource, TestSource } from "./Products";
+import DateService from "./Utils/DateService";
 
 import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const products = new Products(TestSource, new DateService());
-
+const products =
+  process.env.NODE_ENV !== 'test'
+    ? new Products(LocalStorageSource, new DateService())
+    : new Products(TestSource, new DateService());
 function App() {
   const [allProducts, setAllProducts] = useState(products.getAll());
-  const [currentProduct, setCurrentProduct] = useState(null)
+  const [currentProduct, setCurrentProduct] = useState(null);
 
-  const createProduct = (product) =>{
+  const createProduct = (product) => {
     products.create.bind(products)(product);
     setAllProducts(products.getAll());
-  }   
-  const updateProduct = (productId, product) =>{
-    products.update.bind(products)(productId, product); 
+  };
+  const updateProduct = (productId, product) => {
+    products.update.bind(products)(productId, product);
     setAllProducts(products.getAll());
-  } 
-  
+  };
+
   return (
     <Container>
       <header>

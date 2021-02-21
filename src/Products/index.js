@@ -1,4 +1,5 @@
 import TestSource from './sources/TestSource';
+import LocalStorageSource from './sources/LocalStorageSource';
 
 class Products {
   constructor(DataSource, DateService) {
@@ -40,7 +41,7 @@ class Products {
   _writeProductToSource(id, product) {
     return this.dataSource.write('products', product, id);
   }
-  
+
   //createdAt: string in ISO format
   _calculateDaysLeft = (createdAt, coolingPeriod) => {
     let nowMs = this.dateService.getCurrent().getTime();
@@ -52,6 +53,6 @@ class Products {
   };
 }
 
-  
 
-export { Products, TestSource };
+
+export { Products, LocalStorageSource, TestSource };

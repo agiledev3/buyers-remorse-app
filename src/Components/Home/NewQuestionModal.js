@@ -25,7 +25,7 @@ const NewQuestionModal = (props) => {
 
       <Modal.Footer>
         <Button
-          variant="secondary"
+          variant="outline-secondary"
           onClick={props.onHide}
         >
           Cancel

@@ -2,8 +2,7 @@ import React from "react";
 import ProductList from "./ProductList";
 import NewQuestionModal from "./NewQuestionModal.js";
 import useNewQuestionModal from "./useNewQuestionModal.js";
-
-const questions = ["Question 1", "Question 2"];
+import questions from "./questions.json";
 
 const Home = (props) => {
   const {

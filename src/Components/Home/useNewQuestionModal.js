@@ -12,7 +12,7 @@ const useNewQuestionModal = (questions) => {
   const [productId, setProductId] = useState(null);
 
   const closeNewQuestionModal = () => {
-    setAnswer('');
+    setAnswer("");
     setShow(false);
   };
 

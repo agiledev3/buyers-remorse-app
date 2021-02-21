@@ -71,7 +71,9 @@ describe("App acceptance tests", () => {
         // The block below is repeted before each assertion
         beforeEach(() => {
           // Types required input fields
-          const productNameField = screen.getByPlaceholderText(/Product name .../i);
+          const productNameField = screen.getByPlaceholderText(
+            /Product name .../i
+          );
           fireEvent.change(productNameField, {
             target: { value: newProduct.name },
           });
@@ -116,7 +118,7 @@ describe("App acceptance tests", () => {
 
       // Test if the input field holds the current product name
       xtest("if name field value is the existing product name", () => {
-        const productNameField = screen.getAllByDisplayValue('First product')
+        const productNameField = screen.getAllByDisplayValue("First product");
         expect(productNameField).toBeInTheDocument();
       });
 
@@ -129,7 +131,7 @@ describe("App acceptance tests", () => {
 
         beforeEach(() => {
           // Types required input fields
-          const productNameField = screen.getByTestId('name')
+          const productNameField = screen.getByTestId("name");
           fireEvent.change(productNameField, {
             target: { value: changedProduct.name },
           });

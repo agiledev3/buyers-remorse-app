@@ -48,7 +48,6 @@ class Products {
 
   _writeProductToSource(id, product) {
     const result = this.dataSource.write("products", product, id);
-    this.updateCallback();
     return result;
   }
 

@@ -18,6 +18,7 @@ const NewQuestionModal = (props) => {
               value={props.answer}
               onChange={e => props.onAnswerChange(e.target.value)}
             />
+            <Form.Text muted>To increase the buying score of this product you must answer the question above.</Form.Text>
           </Form.Group>
         </Form>
       </Modal.Body>

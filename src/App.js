@@ -3,6 +3,7 @@ import { useState } from "react";
 import PageSelection from "./Components/PageSelection/PageSelection.js";
 import { Products, LocalStorageSource, TestSource } from "./Products";
 import DateService from "./Utils/DateService";
+import { PwaPrompt } from "./Components/PwaPrompt";
 
 import { Container, Alert } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -39,6 +40,7 @@ function App() {
 
   return (
     <Container>
+      <PwaPrompt />
       <header>
         <PageSelection
           pages={App.pages}

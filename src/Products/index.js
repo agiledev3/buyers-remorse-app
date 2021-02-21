@@ -1,13 +1,19 @@
-import TestSource from "./sources/TestSource";
+import TestSource from './sources/TestSource';
+import LocalStorageSource from './sources/LocalStorageSource';
 
 class Products {
-  constructor(DataSource, updateCallback) {
+  constructor(DataSource, DateService) {
     this.dataSource = DataSource;
-    this.updateCallback = updateCallback;
+    this.dateService = DateService;
   }
 
   getAll() {
-    return this._readProductsFromSource();
+    var products = this._readProductsFromSource();
+    //recalculates daysLeft property for each item
+    products.forEach((element) => {
+      element.daysLeft = this._calculateDaysLeft(element.createdAt, element.coolingPeriod);
+    });
+    return products;
   }
 
   getOne(id) {
@@ -25,7 +31,13 @@ class Products {
   }
 
   create(product) {
-    this._writeProductToSource(null, product);
+
+     //init data for new product
+    product.likeCount = 0;
+    product.createdAt = new Date().toISOString();
+    product.daysLeft = product.coolingPeriod;
+
+    this._writeProductToSource(null, product)
   }
 
   remove(productId) {}
@@ -39,6 +51,18 @@ class Products {
     this.updateCallback();
     return result;
   }
+
+  //createdAt: string in ISO format
+  _calculateDaysLeft = (createdAt, coolingPeriod) => {
+    let nowMs = this.dateService.getCurrent().getTime();
+    let createdAtMs = Date.parse(createdAt);
+    let coolingDeadline = createdAtMs + coolingPeriod * this.dateService.msInDay();
+    let diffDays = (coolingDeadline - nowMs) / this.dateService.msInDay();
+    //if difference is larger than 1 day i.e. cooling period hasn't lapsed yet - find value in days
+    return diffDays > 1 ? Math.floor(diffDays) : 0;
+  };
 }
 
-export { Products, TestSource };
+
+
+export { Products, LocalStorageSource, TestSource };

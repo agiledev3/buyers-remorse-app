@@ -5,9 +5,10 @@ import Pages from "../PageSelection/Pages";
 function ListItem(props) {
   const { id, name, daysLeft, questions } = props.product;
 
-  const handleEditClick = () => {
-    props.changePage(Pages.EDIT_PRODUCT);
-  };
+    const handleEditClick = () => {
+        props.changePage(Pages.EDIT_PRODUCT)
+        props.setCurrentProduct(props.product)
+    }
 
   return (
     <Card className="p-3" id={id} key={id}>

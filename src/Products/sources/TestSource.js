@@ -7,11 +7,21 @@ const TestSource = {
 
   write(name, entity, id) {
     //try remove old version if exists
-    if(id) {
-      testData[name] = testData[name].filter(e => e.id !== id); 
+    if (id) {
+      testData[name] = testData[name].filter((e) => e.id !== id);
     }
-    testData[name].push(entity)
-  }
-}
+    else{
+      //set a new unique id
+      entity.id = calculateNextId(testData[name]);
+    }
+    //persist entity
+    testData[name].push(entity);
+  },
+};
+
+//emulates identity generation
+const calculateNextId = (entities) => {
+  return Math.max(...entities.map((element) => element.id)) + 1;
+};
 
 export default TestSource;

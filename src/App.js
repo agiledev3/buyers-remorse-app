@@ -1,16 +1,29 @@
+import { useState } from "react";
+
 import PageSelection from "./Components/PageSelection/PageSelection.js";
-import { Products, TestSource } from "./Products";
+import { Products, LocalStorageSource, TestSource } from "./Products";
+import DateService from "./Utils/DateService";
 
 import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {useState} from "react";
 
+const products =
+  process.env.NODE_ENV !== 'test'
+    ? new Products(LocalStorageSource, new DateService())
+    : new Products(TestSource, new DateService());
 function App() {
-  const [updateCount, setUpdateCount] = useState(0);
-  const products = new Products(TestSource, () => setUpdateCount(updateCount + 1));
-  const allProducts = products.getAll();
-  const createProduct = products.create.bind(products);
-  const updateProduct = products.update.bind(products);
+  const [allProducts, setAllProducts] = useState(products.getAll());
+  const [currentProduct, setCurrentProduct] = useState(null);
+
+  const createProduct = (product) => {
+    products.create.bind(products)(product);
+    setAllProducts(products.getAll());
+  };
+  const updateProduct = (productId, product) => {
+    products.update.bind(products)(productId, product);
+    setAllProducts(products.getAll());
+  };
+
   return (
     <Container>
       <header>
@@ -19,6 +32,8 @@ function App() {
           allProducts={allProducts}
           createProduct={createProduct}
           updateProduct={updateProduct}
+          setCurrentProduct={setCurrentProduct}
+          currentProduct={currentProduct}
         />
       </header>
     </Container>

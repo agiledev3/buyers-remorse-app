@@ -16,7 +16,9 @@ const Home = (props) => {
   } = useNewQuestionModal(questions);
 
   const handleNewQuestionSave = ({ productId, question, answer }) => {
-    props.updateProduct(productId, { questions: { [question]: answer } });
+    if (question && answer)
+      props.updateProduct(productId, { questions: { [question]: answer } });
+    props.increaseLikeCount(productId);
     closeNewQuestionModal();
   };
 

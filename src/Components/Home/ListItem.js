@@ -45,7 +45,7 @@ function ListItem(props) {
             <i className="fas fa-thumbs-up"></i>
             <sup>
               <Badge variant="light">
-                {(questions && Object.entries(questions).length) || 0}
+                {props.product.likeCount}
               </Badge>
             </sup>
           </Button>

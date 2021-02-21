@@ -40,9 +40,16 @@ describe("Products", () => {
     ];
     test("if returns products", () => {
       const dateService = new DateServiceMock(new Date(2021,1,20));
-      const products = new Products(TestSource, dateService);      
-      const allProducts = products.getAll();            
-      expect(allProducts).toEqual(expectedProducts);
+      const products = new Products(TestSource.initialize(), dateService);
+      const allProducts = products.getAll();
+      expect(allProducts).toEqual(expect.arrayContaining(expectedProducts));
     });
   });
+
+  describe(".increaseLikeCount", () => {
+    const dateService = new DateServiceMock(new Date(2021,1,20));
+    const products = new Products(TestSource.initialize(), dateService);
+    products.increaseLikeCount(1);
+    expect(products.getOne(1).likeCount).toBe(4);
+  })
 });

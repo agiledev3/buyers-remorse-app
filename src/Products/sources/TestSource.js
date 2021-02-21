@@ -1,21 +1,26 @@
 import testData from './test-data.json';
 
 const TestSource = {
+  initialize() {
+    this._testData = { products: [ ...testData.products ] };
+    return this;
+  },
+
   read(name) {
-    return testData[name];
+    return this._testData[name];
   },
 
   write(name, entity, id) {
     //try remove old version if exists
     if (id) {
-      testData[name] = testData[name].filter((e) => e.id !== id);
+      this._testData[name] = this._testData[name].filter((e) => e.id !== id);
     }
     else{
       //set a new unique id
-      entity.id = calculateNextId(testData[name]);
+      entity.id = calculateNextId(this._testData[name]);
     }
     //persist entity
-    testData[name].push(entity);
+    this._testData[name].push(entity);
   },
 };
 

@@ -23,6 +23,10 @@ function App() {
     products.update.bind(products)(productId, product);
     setAllProducts(products.getAll());
   };
+  const increaseLikeCount = (productId) => {
+    products.increaseLikeCount.bind(products)(productId);
+    setAllProducts(products.getAll());
+  };
 
   return (
     <Container>
@@ -32,6 +36,7 @@ function App() {
           allProducts={allProducts}
           createProduct={createProduct}
           updateProduct={updateProduct}
+          increaseLikeCount={increaseLikeCount}
           setCurrentProduct={setCurrentProduct}
           currentProduct={currentProduct}
         />

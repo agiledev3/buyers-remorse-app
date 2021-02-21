@@ -1,17 +1,27 @@
-//import { useState } from "react";
+import { useState } from "react";
 
 import PageSelection from "./Components/PageSelection/PageSelection.js";
 import { Products, LocalStorageSource } from "./Products";
+import DateService from "./Utils/DateService"
 
 import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const products = new Products(LocalStorageSource);
+const products = new Products(LocalStorageSource, new DateService());
 
 function App() {
-  const allProducts = products.getAll();
-  const createProduct = products.create.bind(products);
-  const updateProduct = products.update.bind(products);
+  const [allProducts, setAllProducts] = useState(products.getAll());
+  const [currentProduct, setCurrentProduct] = useState(null)
+
+  const createProduct = (product) =>{
+    products.create.bind(products)(product);
+    setAllProducts(products.getAll());
+  }
+  const updateProduct = (productId, product) =>{
+    products.update.bind(products)(productId, product);
+    setAllProducts(products.getAll());
+  }
+
   return (
     <Container>
       <header>
@@ -20,6 +30,8 @@ function App() {
           allProducts={allProducts}
           createProduct={createProduct}
           updateProduct={updateProduct}
+          setCurrentProduct={setCurrentProduct}
+          currentProduct={currentProduct}
         />
       </header>
     </Container>

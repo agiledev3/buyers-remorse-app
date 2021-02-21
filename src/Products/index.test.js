@@ -1,12 +1,48 @@
 import { Products, TestSource } from "./index";
-import testData from "./sources/test-data.json";
+import  DateServiceMock  from "../Utils/DateServiceMock"
 
 describe("Products", () => {
   describe(".getAll", () => {
+    const expectedProducts = [
+      {
+        id: 1,
+        name: "First product",
+        likeCount: 3,
+        linkToBuy: "www.lorem.ipsum",
+        reasonToBuy: "dolor",
+        reminderPeriod: 7,
+        coolingPeriod: 30,
+        createdAt: "2021-01-01T18:00:00.000Z",
+        daysLeft: 0,
+      },
+      {
+        id: 2,
+        name: "Second product",
+        likeCount: 1,
+        linkToBuy: "www.lorem.ipsum",
+        reasonToBuy: "dolor",
+        reminderPeriod: 7,
+        coolingPeriod: 30,
+        createdAt: "2021-01-10T18:00:00.000Z",
+        daysLeft: 0,
+      },
+      {
+        id: 3,
+        name: "Third product",
+        likeCount: 5,
+        linkToBuy: "www.lorem.ipsum",
+        reasonToBuy: "dolor",
+        reminderPeriod: 7,
+        coolingPeriod: 30,
+        createdAt: "2021-02-14T18:00:00.000Z",
+        daysLeft: 24,
+      },
+    ];
     test("if returns products", () => {
-      const products = new Products(TestSource);
-      const allProducts = products.getAll();
-      expect(allProducts).toBe(testData.products);
+      const dateService = new DateServiceMock(new Date(2021,1,20));
+      const products = new Products(TestSource, dateService);      
+      const allProducts = products.getAll();            
+      expect(allProducts).toEqual(expectedProducts);
     });
   });
 });

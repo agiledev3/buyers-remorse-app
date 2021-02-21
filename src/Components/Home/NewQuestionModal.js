@@ -24,6 +24,12 @@ const NewQuestionModal = (props) => {
 
       <Modal.Footer>
         <Button
+          variant="secondary"
+          onClick={props.onHide}
+        >
+          Cancel
+        </Button>
+        <Button
           variant="primary"
           onClick={() =>
             props.onSaveClick({
@@ -33,7 +39,7 @@ const NewQuestionModal = (props) => {
             })
           }
         >
-          Save and close
+          Confirm
         </Button>
       </Modal.Footer>
     </Modal>

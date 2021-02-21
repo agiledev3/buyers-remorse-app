@@ -10,7 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const products =
   process.env.NODE_ENV !== 'test'
     ? new Products(LocalStorageSource, new DateService())
-    : new Products(TestSource, new DateService());
+    : new Products(TestSource.initialize(), new DateService());
 function App() {
   const [allProducts, setAllProducts] = useState(products.getAll());
   const [currentProduct, setCurrentProduct] = useState(null);
@@ -23,6 +23,10 @@ function App() {
     products.update.bind(products)(productId, product);
     setAllProducts(products.getAll());
   };
+  const increaseLikeCount = (productId) => {
+    products.increaseLikeCount.bind(products)(productId);
+    setAllProducts(products.getAll());
+  };
 
   return (
     <Container>
@@ -32,6 +36,7 @@ function App() {
           allProducts={allProducts}
           createProduct={createProduct}
           updateProduct={updateProduct}
+          increaseLikeCount={increaseLikeCount}
           setCurrentProduct={setCurrentProduct}
           currentProduct={currentProduct}
         />

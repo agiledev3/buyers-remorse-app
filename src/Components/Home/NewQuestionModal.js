@@ -18,7 +18,7 @@ const NewQuestionModal = (props) => {
               value={props.answer}
               onChange={e => props.onAnswerChange(e.target.value)}
             />
-            <Form.Text muted>To increase the buying score of this product you must answer the question above.</Form.Text>
+            <Form.Text muted>To increase the score of this product you must answer the question above.</Form.Text>
           </Form.Group>
         </Form>
       </Modal.Body>
@@ -32,6 +32,7 @@ const NewQuestionModal = (props) => {
         </Button>
         <Button
           variant="primary"
+          disabled={props.answer.length === 0}
           onClick={() =>
             props.onSaveClick({
               productId: props.productId,

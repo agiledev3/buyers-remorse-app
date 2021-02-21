@@ -4,10 +4,9 @@ import Pages from "../PageSelection/Pages";
 import { Card, Col, Row, Button } from "react-bootstrap";
 
 function ProductList(props) {
-
-    const handleAddClick = () => {
-        props.changePage(Pages.EDIT_PRODUCT)
-    }
+  const handleAddClick = () => {
+    props.changePage(Pages.EDIT_PRODUCT);
+  };
 
   return (
     <div>

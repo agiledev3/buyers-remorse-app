@@ -12,7 +12,7 @@ const Home = (props) => {
     show,
     question,
     answer,
-    productId
+    productId,
   } = useNewQuestionModal(questions);
 
   const handleNewQuestionSave = ({ productId, question, answer }) => {

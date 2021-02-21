@@ -8,8 +8,8 @@ class DateServiceMock {
     return this.date;
   }
 
-   //miliseconds in a day
-   msInDay(){
+  //miliseconds in a day
+  msInDay() {
     return 86400000;
   }
 }

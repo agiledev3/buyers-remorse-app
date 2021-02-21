@@ -5,10 +5,9 @@ class DateService {
   }
 
   //miliseconds in a day
-  msInDay(){
+  msInDay() {
     return 86400000;
   }
-
 }
 
-export default DateService ;
+export default DateService;

@@ -51,7 +51,9 @@ class Products {
     this._writeProductToSource(null, product);
   }
 
-  remove(productId) {}
+  remove(productId) {
+    this._writeProductToSource(productId, null);
+  }
 
   _readProductsFromSource() {
     return this.dataSource.read("products");

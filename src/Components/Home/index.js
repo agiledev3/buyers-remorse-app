@@ -27,6 +27,7 @@ const Home = (props) => {
       <ProductList
         allProducts={props.allProducts}
         changePage={props.changePage}
+        removeProduct={props.removeProduct}
         setCurrentProduct={props.setCurrentProduct}
         openNewQuestionModal={openNewQuestionModal}
       />

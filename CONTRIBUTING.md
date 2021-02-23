@@ -1,6 +1,13 @@
 # Contributing
 If you would like to contribute to this project please follow these guidlines.
 
+## Improvement
+* Use a clear and descriptive title for the issue to identify the suggestion.
+* Provide a step-by-step description of the suggested enhancement in as many details as possible.
+* Provide specific examples to demonstrate the steps. Include copy/pasteable snippets which you use in those examples, as Markdown code blocks.
+* Describe the current behavior and explain which behavior you expected to see instead and why.
+
+## Found Bug/Problem
 Explain the problem and include additional details to help reproduce the issue:
 * Please use a clear and descriptive title to identify the problem.
 * Describe the exact steps that cause the problem to occure. Please be as specific with details as possible. For example, start by explaining how you started the application, e.g. which command exactly you used in the terminal, or otherwise. 

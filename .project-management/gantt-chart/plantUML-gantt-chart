@@ -45,9 +45,9 @@ printscale daily
 [Deliv. build plan] lasts 7 days and is 100% complete
 
 [10th meeting] happens at 2021-01-24
-[Milestone 1 build] lasts 14 days and is colored in Cyan and is 80% complete
-[1. f.back] as [M1 f.back] lasts 4 days and is colored in Cyan and is 0% complete
-[1. update] as [M1 update] lasts 5 days and is colored in Cyan and is 0% complete
+[Milestone 1 build] lasts 14 days and is colored in Cyan and is 100% complete
+[1. f.back] as [M1 f.back] lasts 4 days and is colored in Cyan and is 50% complete
+[1. update] as [M1 update] lasts 5 days and is colored in Cyan and is 20% complete
 [1. testing] as [M1 testing] is colored in Cyan and is 50% complete
 [11th meeting] happens at 2021-01-31
 [12th meeting] happens at 2021-02-07

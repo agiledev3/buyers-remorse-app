@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.js": "/buyers-remorse-app/static/js/main.0e1a01ed.chunk.js",
-    "main.js.map": "/buyers-remorse-app/static/js/main.0e1a01ed.chunk.js.map",
-    "runtime-main.js": "/buyers-remorse-app/static/js/runtime-main.d00e865c.js",
-    "runtime-main.js.map": "/buyers-remorse-app/static/js/runtime-main.d00e865c.js.map",
+    "main.js": "/buyers-remorse-app/static/js/main.60cb552e.chunk.js",
+    "main.js.map": "/buyers-remorse-app/static/js/main.60cb552e.chunk.js.map",
+    "runtime-main.js": "/buyers-remorse-app/static/js/runtime-main.13621d7e.js",
+    "runtime-main.js.map": "/buyers-remorse-app/static/js/runtime-main.13621d7e.js.map",
     "static/css/2.150d169a.chunk.css": "/buyers-remorse-app/static/css/2.150d169a.chunk.css",
-    "static/js/2.a397477d.chunk.js": "/buyers-remorse-app/static/js/2.a397477d.chunk.js",
-    "static/js/2.a397477d.chunk.js.map": "/buyers-remorse-app/static/js/2.a397477d.chunk.js.map",
-    "static/js/3.23412e7d.chunk.js": "/buyers-remorse-app/static/js/3.23412e7d.chunk.js",
-    "static/js/3.23412e7d.chunk.js.map": "/buyers-remorse-app/static/js/3.23412e7d.chunk.js.map",
+    "static/js/2.587784fd.chunk.js": "/buyers-remorse-app/static/js/2.587784fd.chunk.js",
+    "static/js/2.587784fd.chunk.js.map": "/buyers-remorse-app/static/js/2.587784fd.chunk.js.map",
+    "static/js/3.5243a8f9.chunk.js": "/buyers-remorse-app/static/js/3.5243a8f9.chunk.js",
+    "static/js/3.5243a8f9.chunk.js.map": "/buyers-remorse-app/static/js/3.5243a8f9.chunk.js.map",
     "index.html": "/buyers-remorse-app/index.html",
     "static/css/2.150d169a.chunk.css.map": "/buyers-remorse-app/static/css/2.150d169a.chunk.css.map",
-    "static/js/2.a397477d.chunk.js.LICENSE.txt": "/buyers-remorse-app/static/js/2.a397477d.chunk.js.LICENSE.txt"
+    "static/js/2.587784fd.chunk.js.LICENSE.txt": "/buyers-remorse-app/static/js/2.587784fd.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.d00e865c.js",
+    "static/js/runtime-main.13621d7e.js",
     "static/css/2.150d169a.chunk.css",
-    "static/js/2.a397477d.chunk.js",
-    "static/js/main.0e1a01ed.chunk.js"
+    "static/js/2.587784fd.chunk.js",
+    "static/js/main.60cb552e.chunk.js"
   ]
 }

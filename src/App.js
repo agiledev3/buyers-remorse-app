@@ -46,7 +46,10 @@ function App() {
   return (
     <Container>
       <PwaPrompt />
-      <StaticHeader staticHeader={staticHeader} />
+      <StaticHeader
+        title={staticHeader.title}
+        onBackButtonClick={staticHeader.onBackButtonClick}
+      />
       <PageSelection
         pages={App.pages}
         allProducts={allProducts}

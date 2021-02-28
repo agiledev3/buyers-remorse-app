@@ -2,7 +2,7 @@ import React from "react";
 import { Card, Col, Row, Button } from "react-bootstrap";
 
 function StaticHeader(props) {
-  const { title, onBackButtonClick } = props.staticHeader;
+  const { title, onBackButtonClick } = props;
   return (
     <Card className="my-2">
       <Card.Title className="text-center">

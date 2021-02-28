@@ -1,4 +1,11 @@
+import testData from "./test-data.json";
+
 const LocalStorageSource = {
+  initialize(name, data) {
+    localStorage.setItem(name, data);
+    return this;
+  },
+
   read(name) {
     var value = localStorage.getItem(name);
     if (value) return JSON.parse(value);

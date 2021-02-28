@@ -5,6 +5,7 @@ import { Products, LocalStorageSource, TestSource } from "./Products";
 import DateService from "./Utils/DateService";
 import { PwaPrompt } from "./Components/PwaPrompt";
 import StaticHeader from "./Components/StaticHeader";
+import ErrorAlert from "./Components/ErrorAlert";
 
 import { Container, Alert } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -15,24 +16,73 @@ const products =
     : new Products(TestSource.initialize(), new DateService());
 function App() {
   const [staticHeader, setStaticHeader] = useState({
-    title: "",
+    title: "Loading...",
     onBackButtonClick: null,
   });
-  const [allProducts, setAllProducts] = useState(products.getAll());
+  const [error, setError] = useState(null);
+  const getProductsSafe = () => {
+    try {
+      return products.getAll();
+    } catch (ex) {
+      if (!error) {
+        setTimeout(() => {
+          setError({
+            heading: "Error loading products",
+            body: ex.message,
+          });
+        }, 500);
+      }
+    }
+    return [];
+  };
+  const [allProducts, setAllProducts] = useState(getProductsSafe());
   const [currentProduct, setCurrentProduct] = useState(null);
   const [showForgetAlert, setShowForgetAlert] = useState(false);
 
   const createProduct = (product) => {
-    products.create.bind(products)(product);
-    setAllProducts(products.getAll());
+    try {
+      products.create.bind(products)(product);
+    } catch (ex) {
+      if (!error) {
+        setTimeout(() => {
+          setError({
+            heading: "Error adding new products",
+            body: ex.message,
+          });
+        }, 500);
+      }
+    }
+    setAllProducts(getProductsSafe());
   };
   const updateProduct = (productId, product) => {
-    products.update.bind(products)(productId, product);
-    setAllProducts(products.getAll());
+    try {
+      products.update.bind(products)(productId, product);
+    } catch (ex) {
+      if (!error) {
+        setTimeout(() => {
+          setError({
+            heading: "Error updating product",
+            body: ex.message,
+          });
+        }, 500);
+      }
+    }
+    setAllProducts(getProductsSafe());
   };
   const removeProduct = (product) => {
-    products.remove.bind(products)(product.id);
-    setAllProducts(products.getAll());
+    try {
+      products.remove.bind(products)(product.id);
+    } catch (ex) {
+      if (!error) {
+        setTimeout(() => {
+          setError({
+            heading: "Error removing product",
+            body: ex.message,
+          });
+        }, 500);
+      }
+    }
+    setAllProducts(getProductsSafe());
     setShowForgetAlert(true);
     setTimeout(() => {
       setShowForgetAlert(false);
@@ -40,7 +90,7 @@ function App() {
   };
   const increaseLikeCount = (productId) => {
     products.increaseLikeCount.bind(products)(productId);
-    setAllProducts(products.getAll());
+    setAllProducts(getProductsSafe());
   };
 
   return (
@@ -64,6 +114,7 @@ function App() {
       <Alert show={showForgetAlert} variant="success" className="my-1">
         <p>The product has been removed from the list. Good job!</p>
       </Alert>
+      <ErrorAlert error={error} setError={setError} />
     </Container>
   );
 }

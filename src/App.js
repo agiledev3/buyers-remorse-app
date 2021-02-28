@@ -4,6 +4,7 @@ import PageSelection from "./Components/PageSelection/PageSelection.js";
 import { Products, LocalStorageSource, TestSource } from "./Products";
 import DateService from "./Utils/DateService";
 import { PwaPrompt } from "./Components/PwaPrompt";
+import StaticHeader from "./Components/StaticHeader";
 
 import { Container, Alert } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -13,6 +14,10 @@ const products =
     ? new Products(LocalStorageSource, new DateService())
     : new Products(TestSource.initialize(), new DateService());
 function App() {
+  const [staticHeader, setStaticHeader] = useState({
+    title: "",
+    onBackButtonClick: null,
+  });
   const [allProducts, setAllProducts] = useState(products.getAll());
   const [currentProduct, setCurrentProduct] = useState(null);
   const [showForgetAlert, setShowForgetAlert] = useState(false);
@@ -41,18 +46,21 @@ function App() {
   return (
     <Container>
       <PwaPrompt />
-      <header>
-        <PageSelection
-          pages={App.pages}
-          allProducts={allProducts}
-          createProduct={createProduct}
-          removeProduct={removeProduct}
-          updateProduct={updateProduct}
-          increaseLikeCount={increaseLikeCount}
-          setCurrentProduct={setCurrentProduct}
-          currentProduct={currentProduct}
-        />
-      </header>
+      <StaticHeader
+        title={staticHeader.title}
+        onBackButtonClick={staticHeader.onBackButtonClick}
+      />
+      <PageSelection
+        pages={App.pages}
+        allProducts={allProducts}
+        createProduct={createProduct}
+        removeProduct={removeProduct}
+        updateProduct={updateProduct}
+        increaseLikeCount={increaseLikeCount}
+        setCurrentProduct={setCurrentProduct}
+        currentProduct={currentProduct}
+        setStaticHeader={setStaticHeader}
+      />
       <Alert show={showForgetAlert} variant="success" className="my-1">
         <p>The product has been removed from the list. Good job!</p>
       </Alert>

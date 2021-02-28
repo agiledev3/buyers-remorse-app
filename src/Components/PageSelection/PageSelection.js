@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Fragment } from "react";
+import { useState, Fragment } from "react";
 import Home from "../Home";
 import EditProduct from "../EditProduct";
 //list of pages in the app
@@ -18,6 +17,7 @@ const PageSelection = (props) => {
         <Home
           allProducts={props.allProducts}
           changePage={setSelectedPage}
+          setStaticHeader={props.setStaticHeader}
           updateProduct={props.updateProduct}
           removeProduct={props.removeProduct}
           setCurrentProduct={props.setCurrentProduct}
@@ -29,6 +29,7 @@ const PageSelection = (props) => {
           product={props.currentProduct}
           setCurrentProduct={props.setCurrentProduct}
           changePage={setSelectedPage}
+          setStaticHeader={props.setStaticHeader}
           createProduct={props.createProduct}
           updateProduct={props.updateProduct}
         />

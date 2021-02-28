@@ -4,7 +4,7 @@ import PageSelection from "./Components/PageSelection/PageSelection.js";
 import { Products, LocalStorageSource, TestSource } from "./Products";
 import DateService from "./Utils/DateService";
 
-import Container from "react-bootstrap/Container";
+import { Container, Alert } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const products =
@@ -14,6 +14,7 @@ const products =
 function App() {
   const [allProducts, setAllProducts] = useState(products.getAll());
   const [currentProduct, setCurrentProduct] = useState(null);
+  const [showForgetAlert, setShowForgetAlert] = useState(false);
 
   const createProduct = (product) => {
     products.create.bind(products)(product);
@@ -22,6 +23,14 @@ function App() {
   const updateProduct = (productId, product) => {
     products.update.bind(products)(productId, product);
     setAllProducts(products.getAll());
+  };
+  const removeProduct = (product) => {
+    products.remove.bind(products)(product.id);
+    setAllProducts(products.getAll());
+    setShowForgetAlert(true);
+    setTimeout(() => {
+      setShowForgetAlert(false);
+    }, 2000);
   };
   const increaseLikeCount = (productId) => {
     products.increaseLikeCount.bind(products)(productId);
@@ -35,12 +44,16 @@ function App() {
           pages={App.pages}
           allProducts={allProducts}
           createProduct={createProduct}
+          removeProduct={removeProduct}
           updateProduct={updateProduct}
           increaseLikeCount={increaseLikeCount}
           setCurrentProduct={setCurrentProduct}
           currentProduct={currentProduct}
         />
       </header>
+      <Alert show={showForgetAlert} variant="success" className="my-1">
+        <p>The product has been removed from the list. Good job!</p>
+      </Alert>
     </Container>
   );
 }

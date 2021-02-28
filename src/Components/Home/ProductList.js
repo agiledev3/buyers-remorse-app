@@ -32,6 +32,7 @@ function ProductList(props) {
           product={product}
           changePage={props.changePage}
           openNewQuestionModal={props.openNewQuestionModal}
+          removeProduct={props.removeProduct}
           setCurrentProduct={props.setCurrentProduct}
         />
       ))}

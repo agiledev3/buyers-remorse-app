@@ -16,7 +16,11 @@ function ListItem(props) {
       <Row>
         <Col>
           {daysLeft === 0 ? (
-            <Button variant="btn btn-outline-success" className="px-3">
+            <Button
+              variant="btn btn-outline-success"
+              className="px-3"
+              onClick={() => props.removeProduct(props.product)}
+            >
               <i className="fas fa-minus-circle"></i> Forget
             </Button>
           ) : (

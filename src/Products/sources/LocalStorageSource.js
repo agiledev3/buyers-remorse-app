@@ -15,7 +15,10 @@ const LocalStorageSource = {
       //set a unique id
       entity.id = this.calculateNextId(source);
     }
-    source.push(entity);
+    // handles remove if entity is null or undefined
+    if (entity) {
+      source.push(entity);
+    }
 
     localStorage.setItem(name, JSON.stringify(source));
   },

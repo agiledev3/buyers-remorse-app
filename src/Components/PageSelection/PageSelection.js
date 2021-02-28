@@ -19,6 +19,7 @@ const PageSelection = (props) => {
           allProducts={props.allProducts}
           changePage={setSelectedPage}
           updateProduct={props.updateProduct}
+          removeProduct={props.removeProduct}
           setCurrentProduct={props.setCurrentProduct}
           increaseLikeCount={props.increaseLikeCount}
         />

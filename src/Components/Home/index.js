@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, Fragment } from "react";
 import ProductList from "./ProductList";
 import NewQuestionModal from "./NewQuestionModal.js";
 import useNewQuestionModal from "./useNewQuestionModal.js";
@@ -22,8 +22,16 @@ const Home = (props) => {
     closeNewQuestionModal();
   };
 
+  useEffect(() => {
+    props.setStaticHeader({
+      title: "My wishlist",
+      onBackButtonClick: null,
+    });
+    //eslint-disable-next-line
+  }, []);
+
   return (
-    <React.Fragment>
+    <Fragment>
       <ProductList
         allProducts={props.allProducts}
         changePage={props.changePage}
@@ -40,7 +48,7 @@ const Home = (props) => {
         onSaveClick={handleNewQuestionSave}
         onAnswerChange={handleAnswerChange}
       />
-    </React.Fragment>
+    </Fragment>
   );
 };
 

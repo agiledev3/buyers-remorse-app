@@ -24,7 +24,7 @@ const Home = (props) => {
 
   useEffect(() => {
     props.setStaticHeader({
-      title: "My wishlist",
+      title: "My ",
       onBackButtonClick: null,
     });
     //eslint-disable-next-line

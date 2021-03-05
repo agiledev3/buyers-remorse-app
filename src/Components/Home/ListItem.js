@@ -20,7 +20,7 @@ function ListItem(props) {
           <Button
             variant="btn btn-outline-success"
             className="px-4"
-            onClick={() => props.removeProduct(props.product)}
+            onClick={() => props.removeProduct(props.product, true)}
           >
             <i className="far fa-thumbs-up"></i> Forget
           </Button>
@@ -30,7 +30,7 @@ function ListItem(props) {
             variant="outline-danger"
             title="Buy product"
             className="px-3 mb-1 mx-1"
-            onClick={() => props.removeProduct(props.product)}
+            onClick={() => props.removeProduct(props.product, false)}
             disabled={!canBuy}
           >
             <i className="fas fa-shopping-cart"></i>{" "}

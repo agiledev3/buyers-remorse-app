@@ -5,7 +5,9 @@ import BuyDialog from "./BuyDialog";
 
 function ListItem(props) {
   const [showBuyDialog, setShowBuyDialog] = useState(false);
-  const { id, name, daysLeft, likeCount } = props.product;
+  const { id, name, daysLeft, likeCount, questions } = props.product;
+
+  const answersCount = questions ? Object.values(questions).length : 0;
 
   const handleEditClick = () => {
     props.changePage(Pages.EDIT_PRODUCT);
@@ -64,6 +66,7 @@ function ListItem(props) {
         show={showBuyDialog}
         handleConfirmClick={() => props.removeProduct(props.product, false)}
         handleDeclineClick={() => setShowBuyDialog(false)}
+        answersCount={answersCount}
       />
     </Fragment>
   );

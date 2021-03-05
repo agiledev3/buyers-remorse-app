@@ -35,7 +35,7 @@ describe("Products", () => {
         reminderPeriod: 7,
         coolingPeriod: 30,
         createdAt: "2021-02-14T18:00:00.000Z",
-        daysLeft: 24,
+        daysLeft: 25,
       },
     ];
     test("if returns products", () => {

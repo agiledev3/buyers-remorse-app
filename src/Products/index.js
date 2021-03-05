@@ -72,7 +72,7 @@ class Products {
       createdAtMs + coolingPeriod * this.dateService.msInDay();
     let diffDays = (coolingDeadline - nowMs) / this.dateService.msInDay();
     //if difference is larger than 1 day i.e. cooling period hasn't lapsed yet - find value in days
-    return diffDays > 1 ? Math.floor(diffDays) : 0;
+    return diffDays > 1 ? Math.ceil(diffDays) : 0;
   };
 }
 

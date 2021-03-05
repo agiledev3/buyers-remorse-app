@@ -10,43 +10,46 @@ function ListItem(props) {
     props.setCurrentProduct(props.product);
   };
 
+  const canBuy = daysLeft === 0;
+
   return (
     <Card className="p-3" id={id} key={id}>
       <Card.Title>{name}</Card.Title>
       <Row>
-        <Col>
-          {daysLeft === 0 ? (
-            <Button
-              variant="btn btn-outline-success"
-              className="px-3"
-              onClick={() => props.removeProduct(props.product)}
-            >
-              <i className="fas fa-minus-circle"></i> Forget
-            </Button>
-          ) : (
-            <span>
-              <i className="far fa-clock"></i> {daysLeft} days left
-            </span>
-          )}
+        <Col xs={{ span: 4 }}>
+          <Button
+            variant="btn btn-outline-success"
+            className="px-4"
+            onClick={() => props.removeProduct(props.product)}
+          >
+            <i className="far fa-thumbs-up"></i> Forget
+          </Button>
         </Col>
-        <Col className="text-right">
+        <Col xs={{ span: 8 }} className="text-right">
+          <Button
+            variant="outline-danger"
+            title="Buy product"
+            className="px-3 mb-1 mx-1"
+            onClick={() => props.removeProduct(props.product)}
+            disabled={!canBuy}
+          >
+            <i className="fas fa-shopping-cart"></i>{" "}
+            {canBuy ? "Buy" : daysLeft + " days to unlock"}
+          </Button>
           <Button
             variant="outline-secondary"
             title="Edit product"
             onClick={handleEditClick}
+            className="mb-1"
           >
             <i className="fas fa-pen"></i>
           </Button>
           <Button
             variant="success"
             onClick={() => props.openNewQuestionModal(props.product)}
-            style={{
-              paddingLeft: "0.55em",
-              paddingRight: "0.2em",
-              marginLeft: "0.3em",
-            }}
+            className="px-2 mb-1 ml-1"
           >
-            <i className="fas fa-thumbs-up"></i>
+            <i className="fas fa-question-circle"></i>
             <sup>
               <Badge variant="light">{likeCount}</Badge>
             </sup>

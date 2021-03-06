@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import useForm from "./useForm";
 import Pages from "../PageSelection/Pages";
-import { Col, Button, Form } from "react-bootstrap";
+import { Col, Button, Form, InputGroup } from "react-bootstrap";
 
 const EditProduct = (props) => {
   const { handleChange, handleReset, product } = useForm(props.product);
@@ -52,6 +52,8 @@ const EditProduct = (props) => {
           placeholder="Link to a website ..."
           name="linkToBuy"
           id="linkToBuy"
+          pattern="(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"
+          title="Should be a valid web address, e.g. www.example.com"
         />
       </Form.Group>
       <Form.Group>
@@ -74,34 +76,44 @@ const EditProduct = (props) => {
           <Form.Label htmlFor="reminderPeriod">
             How long should I wait before I remind you about this product?
           </Form.Label>
-          <Form.Control
-            onChange={handleChange}
-            value={product.reminderPeriod}
-            placeholder="Days ..."
-            name="reminderPeriod"
-            id="reminderPeriod"
-            type="number"
-            min="1"
-            max="30"
-            style={{ maxWidth: "5rem" }}
-          />
+          <InputGroup>
+            <InputGroup.Prepend>
+              <InputGroup.Text>Days</InputGroup.Text>
+            </InputGroup.Prepend>
+            <Form.Control
+              onChange={handleChange}
+              value={product.reminderPeriod}
+              placeholder="Days ..."
+              name="reminderPeriod"
+              id="reminderPeriod"
+              type="number"
+              min="1"
+              max="30"
+              style={{ maxWidth: "5rem" }}
+            />
+          </InputGroup>
         </Form.Group>
         <Col lg="2"></Col>
         <Form.Group as={Col} xs="auto">
           <Form.Label htmlFor="coolingPeriod">
             How long should I lock the buy button?
           </Form.Label>
-          <Form.Control
-            onChange={handleChange}
-            value={product.coolingPeriod}
-            placeholder="Days ..."
-            name="coolingPeriod"
-            id="coolingPeriod"
-            type="number"
-            min="1"
-            max="90"
-            style={{ maxWidth: "5rem" }}
-          />
+          <InputGroup>
+            <InputGroup.Prepend>
+              <InputGroup.Text>Days</InputGroup.Text>
+            </InputGroup.Prepend>
+            <Form.Control
+              onChange={handleChange}
+              value={product.coolingPeriod}
+              placeholder="Days ..."
+              name="coolingPeriod"
+              id="coolingPeriod"
+              type="number"
+              min="1"
+              max="90"
+              style={{ maxWidth: "5rem" }}
+            />
+          </InputGroup>
         </Form.Group>
       </Form.Row>
       <Form.Row>

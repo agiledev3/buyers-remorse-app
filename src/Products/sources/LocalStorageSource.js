@@ -1,5 +1,3 @@
-import testData from "./test-data.json";
-
 const LocalStorageSource = {
   initialize(name, data) {
     localStorage.setItem(name, data);

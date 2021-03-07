@@ -9,18 +9,22 @@ const BuyDialog = (props) => {
           ? "Are you sure you would like to buy this product?"
           : "Please answer at least 3 awareness questions to unlock the buy button."}
       </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={props.handleDeclineClick}>
-          No
-        </Button>
-        <Button
-          variant="danger"
-          onClick={props.handleConfirmClick}
-          disabled={!canBuy}
-        >
-          Yes
-        </Button>
-      </Modal.Footer>
+      {canBuy ? (
+        <Modal.Footer>
+          <Button variant="secondary" onClick={props.handleDeclineClick}>
+            No
+          </Button>
+          <Button variant="danger" onClick={props.handleConfirmClick}>
+            Yes
+          </Button>
+        </Modal.Footer>
+      ) : (
+        <Modal.Footer>
+          <Button variant="secondary" onClick={props.handleDeclineClick}>
+            Close
+          </Button>
+        </Modal.Footer>
+      )}
     </Modal>
   );
 };

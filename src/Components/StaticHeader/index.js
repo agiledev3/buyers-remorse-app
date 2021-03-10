@@ -19,9 +19,7 @@ function StaticHeader(props) {
             )}
           </Col>
           <Col xs={{ span: 8 }}>Buyer's regret</Col>
-          <Col xs={{ span: 2 }} style={{ fontSize: "2em" }}>
-            <i className="far fa-user-circle align-middle"></i>
-          </Col>
+          <Col xs={{ span: 2 }} style={{ fontSize: "2em" }}></Col>
         </Row>
         <Row>
           <Col sm={{ span: 2 }}></Col>

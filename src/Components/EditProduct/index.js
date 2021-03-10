@@ -81,7 +81,7 @@ const EditProduct = (props) => {
       {hasAnswers && (
         <div className="my-2">
           {questions.map((q, i) => (
-            <div className="my-1">
+            <div key={i} className="my-1">
               <p>{q}</p>
               <p
                 className="p-2"

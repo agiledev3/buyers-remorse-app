@@ -1,8 +1,12 @@
 import { Products, TestSource } from "./index";
 import DateServiceMock from "../Utils/DateServiceMock";
 
+// This file is a integration test of the Product class and the source classes.
+// Product class is a repository that query and modify product entities.
 describe("Products", () => {
+  // This block tests the "getAll" method
   describe(".getAll", () => {
+    // List of expected products to be returned
     const expectedProducts = [
       {
         id: 1,
@@ -38,18 +42,27 @@ describe("Products", () => {
         daysLeft: 24,
       },
     ];
+
+    // Test if products are returned
     test("if returns products", () => {
+      // Initialize Product instance
       const dateService = new DateServiceMock(new Date(2021, 1, 20));
       const products = new Products(TestSource.initialize(), dateService);
+      // Execute the method to be tested
       const allProducts = products.getAll();
+      // Assert if all products are returned as expected
       expect(allProducts).toEqual(expect.arrayContaining(expectedProducts));
     });
   });
 
+  // This block tests the "increaseLikeCount" method
   describe(".increaseLikeCount", () => {
+    // Initialize Product instance
     const dateService = new DateServiceMock(new Date(2021, 1, 20));
     const products = new Products(TestSource.initialize(), dateService);
+    // Execute the method to be tested
     products.increaseLikeCount(1);
+    // Assert if the likeCount property was increased in the product correct product entity
     expect(products.getOne(1).likeCount).toBe(4);
   });
 });

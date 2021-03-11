@@ -18,7 +18,7 @@ function StaticHeader(props) {
               </Button>
             )}
           </Col>
-          <Col xs={{ span: 8 }}>Buyer's regret</Col>
+          <Col xs={{ span: 8 }}>Felicity</Col>
           <Col xs={{ span: 2 }} style={{ fontSize: "2em" }}></Col>
         </Row>
         <Row>

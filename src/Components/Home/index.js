@@ -36,14 +36,15 @@ const Home = (props) => {
   useEffect(() => {
     const productNotifications = new ProductNotifications(
       props.allProducts,
-      (productId) => props.updateProduct(productId, { lastNotification: new Date() }),
+      (productId) =>
+        props.updateProduct(productId, { lastNotification: new Date() }),
       (productId) => {
         props.changePage(Pages.EDIT_PRODUCT);
         props.setCurrentProduct(productId);
       }
     );
     productNotifications.showExpiredReminders();
-  }, []);
+  });
 
   return (
     <Fragment>

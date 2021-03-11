@@ -9,7 +9,7 @@ const buildNotification = (title, body, onClick) => {
 function showNotification(title, body, onClick) {
   // Let's check if the browser supports notifications
   if (!("Notification" in window)) {
-    alert("This browser does not support desktop notification");
+    console.warn("This browser does not support desktop notification");
   }
 
   // Let's check whether notification permissions have already been granted

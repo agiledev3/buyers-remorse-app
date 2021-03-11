@@ -2,6 +2,7 @@ import { useEffect, Fragment } from "react";
 import ProductList from "./ProductList";
 import NewQuestionModal from "./NewQuestionModal.js";
 import useNewQuestionModal from "./useNewQuestionModal.js";
+import ProductRemovedAlert from "./ProductRemovedAlert";
 import questions from "./questions.json";
 
 const Home = (props) => {
@@ -47,6 +48,10 @@ const Home = (props) => {
         onHide={closeNewQuestionModal}
         onSaveClick={handleNewQuestionSave}
         onAnswerChange={handleAnswerChange}
+      />
+      <ProductRemovedAlert
+        showForgetAlert={props.showForgetAlert}
+        showBoughtAlert={props.showBoughtAlert}
       />
     </Fragment>
   );

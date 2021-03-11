@@ -22,6 +22,8 @@ const PageSelection = (props) => {
           removeProduct={props.removeProduct}
           setCurrentProduct={props.setCurrentProduct}
           increaseLikeCount={props.increaseLikeCount}
+          showForgetAlert={props.showForgetAlert}
+          showBoughtAlert={props.showBoughtAlert}
         />
       )}
       {selectedPage === Pages.EDIT_PRODUCT && (

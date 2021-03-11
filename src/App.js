@@ -7,7 +7,7 @@ import { PwaPrompt } from "./Components/PwaPrompt";
 import StaticHeader from "./Components/StaticHeader";
 import ErrorAlert from "./Components/ErrorAlert";
 
-import { Container, Alert } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const products =
@@ -38,6 +38,7 @@ function App() {
   const [allProducts, setAllProducts] = useState(getProductsSafe());
   const [currentProduct, setCurrentProduct] = useState(null);
   const [showForgetAlert, setShowForgetAlert] = useState(false);
+  const [showBoughtAlert, setShowBoughtAlert] = useState(false);
 
   const createProduct = (product) => {
     try {
@@ -69,7 +70,7 @@ function App() {
     }
     setAllProducts(getProductsSafe());
   };
-  const removeProduct = (product) => {
+  const removeProduct = (product, isForget) => {
     try {
       products.remove.bind(products)(product.id);
     } catch (ex) {
@@ -83,9 +84,16 @@ function App() {
       }
     }
     setAllProducts(getProductsSafe());
-    setShowForgetAlert(true);
+
+    if (isForget) {
+      setShowForgetAlert(true);
+    } else {
+      setShowBoughtAlert(true);
+    }
+
     setTimeout(() => {
       setShowForgetAlert(false);
+      setShowBoughtAlert(false);
     }, 2000);
   };
   const increaseLikeCount = (productId) => {
@@ -110,10 +118,9 @@ function App() {
         setCurrentProduct={setCurrentProduct}
         currentProduct={currentProduct}
         setStaticHeader={setStaticHeader}
+        showForgetAlert={showForgetAlert}
+        showBoughtAlert={showBoughtAlert}
       />
-      <Alert show={showForgetAlert} variant="success" className="my-1">
-        <p>The product has been removed from the list. Good job!</p>
-      </Alert>
       <ErrorAlert error={error} setError={setError} />
     </Container>
   );

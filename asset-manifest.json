@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.js": "/buyers-remorse-app/static/js/main.93d5db1e.chunk.js",
-    "main.js.map": "/buyers-remorse-app/static/js/main.93d5db1e.chunk.js.map",
+    "main.js": "/buyers-remorse-app/static/js/main.c150a032.chunk.js",
+    "main.js.map": "/buyers-remorse-app/static/js/main.c150a032.chunk.js.map",
     "runtime-main.js": "/buyers-remorse-app/static/js/runtime-main.fef368ea.js",
     "runtime-main.js.map": "/buyers-remorse-app/static/js/runtime-main.fef368ea.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/buyers-remorse-app/static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.c6465e39.chunk.js": "/buyers-remorse-app/static/js/2.c6465e39.chunk.js",
-    "static/js/2.c6465e39.chunk.js.map": "/buyers-remorse-app/static/js/2.c6465e39.chunk.js.map",
+    "static/js/2.212d8e7d.chunk.js": "/buyers-remorse-app/static/js/2.212d8e7d.chunk.js",
+    "static/js/2.212d8e7d.chunk.js.map": "/buyers-remorse-app/static/js/2.212d8e7d.chunk.js.map",
     "static/js/3.9181e9e4.chunk.js": "/buyers-remorse-app/static/js/3.9181e9e4.chunk.js",
     "static/js/3.9181e9e4.chunk.js.map": "/buyers-remorse-app/static/js/3.9181e9e4.chunk.js.map",
     "index.html": "/buyers-remorse-app/index.html",
     "static/css/2.4c97ca4f.chunk.css.map": "/buyers-remorse-app/static/css/2.4c97ca4f.chunk.css.map",
-    "static/js/2.c6465e39.chunk.js.LICENSE.txt": "/buyers-remorse-app/static/js/2.c6465e39.chunk.js.LICENSE.txt",
+    "static/js/2.212d8e7d.chunk.js.LICENSE.txt": "/buyers-remorse-app/static/js/2.212d8e7d.chunk.js.LICENSE.txt",
     "static/media/pwa.87f7645c.ico": "/buyers-remorse-app/static/media/pwa.87f7645c.ico"
   },
   "entrypoints": [
     "static/js/runtime-main.fef368ea.js",
     "static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.c6465e39.chunk.js",
-    "static/js/main.93d5db1e.chunk.js"
+    "static/js/2.212d8e7d.chunk.js",
+    "static/js/main.c150a032.chunk.js"
   ]
 }

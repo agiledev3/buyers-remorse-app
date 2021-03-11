@@ -4,6 +4,8 @@ import NewQuestionModal from "./NewQuestionModal.js";
 import useNewQuestionModal from "./useNewQuestionModal.js";
 import ProductRemovedAlert from "./ProductRemovedAlert";
 import questions from "./questions.json";
+import Pages from "../PageSelection/Pages.js";
+import ProductNotifications from "../../ProductNotifications.js";
 
 const Home = (props) => {
   const {
@@ -29,6 +31,18 @@ const Home = (props) => {
       onBackButtonClick: null,
     });
     //eslint-disable-next-line
+  }, []);
+
+  useEffect(() => {
+    const productNotifications = new ProductNotifications(
+      props.allProducts,
+      (productId) => props.updateProduct(productId, { lastNotification: new Date() }),
+      (productId) => {
+        props.changePage(Pages.EDIT_PRODUCT);
+        props.setCurrentProduct(productId);
+      }
+    );
+    productNotifications.showExpiredReminders();
   }, []);
 
   return (

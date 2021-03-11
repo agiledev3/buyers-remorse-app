@@ -14,6 +14,7 @@ const products =
   process.env.NODE_ENV !== "test"
     ? new Products(LocalStorageSource, new DateService())
     : new Products(TestSource.initialize(), new DateService());
+
 function App() {
   const [staticHeader, setStaticHeader] = useState({
     title: "Loading...",

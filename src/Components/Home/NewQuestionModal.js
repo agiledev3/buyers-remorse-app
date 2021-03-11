@@ -2,6 +2,8 @@ import React from "react";
 import { Modal, Form, Button } from "react-bootstrap";
 
 const NewQuestionModal = (props) => {
+  const enterKeyCode = 13;
+
   const confirmAnswer = () => {
     props.onSaveClick({
       productId: props.productId,
@@ -11,7 +13,7 @@ const NewQuestionModal = (props) => {
   };
 
   const handleKeyboardEvent = (e) => {
-    if (!!props.question && e.keyCode === 13) {
+    if (!!props.question && e.keyCode === enterKeyCode) {
       e.preventDefault();
       if (props.answer.length !== 0) {
         confirmAnswer();

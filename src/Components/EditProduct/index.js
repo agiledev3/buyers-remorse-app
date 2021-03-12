@@ -3,14 +3,20 @@ import useForm from "./useForm";
 import Pages from "../PageSelection/Pages";
 import { Col, Button, Form, InputGroup } from "react-bootstrap";
 
+//A component to render "Edit product" page
 const EditProduct = (props) => {
   const { handleChange, handleReset, product } = useForm(props.product);
 
+  //existing product is the one with id property assigned
   const existingProduct = !!product.id;
+  //answers are stored as values of questions object
   const hasAnswers = !!product.questions;
+  //questions are stored as keys of questions object
   const questions = hasAnswers ? Object.keys(product.questions) : [];
+  //answers are stored as values of questions object
   const answers = hasAnswers ? Object.values(product.questions) : [];
 
+  //handles form submission event
   const handleSubmit = (e) => {
     e.preventDefault();
     if (existingProduct) {
@@ -22,12 +28,15 @@ const EditProduct = (props) => {
     props.setCurrentProduct(null);
   };
 
+  //resets fields in the form to an initial value
+  //and changes the page to Home page
   const resetAndGoHome = () => {
     handleReset();
     props.changePage(Pages.HOME);
     props.setCurrentProduct(null);
   };
 
+  //sets properties of the header element at page load
   useEffect(() => {
     props.setStaticHeader({
       title: "Product Details",

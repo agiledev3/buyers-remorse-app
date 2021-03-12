@@ -3,7 +3,9 @@ import ListItem from "./ListItem";
 import Pages from "../PageSelection/Pages";
 import { Button } from "react-bootstrap";
 
+//Renders a list of products
 function ProductList(props) {
+  //takes user to Edit page when clicking on Add button
   const handleAddClick = () => {
     props.changePage(Pages.EDIT_PRODUCT);
   };

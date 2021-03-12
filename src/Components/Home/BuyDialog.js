@@ -1,5 +1,6 @@
 import { Modal, Button } from "react-bootstrap";
 
+//A pop-up shown at click on the "Buy" button
 const BuyDialog = (props) => {
   const canBuy = props.answersCount >= 3;
   return (

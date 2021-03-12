@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Alert } from "react-bootstrap";
 
+//An alert notifying user of a successful deletion of a product
 const ProductRemovedAlert = (props) => {
   return (
     <Fragment>

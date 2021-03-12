@@ -3,17 +3,21 @@ import { Card, Col, Row, Button, Badge } from "react-bootstrap";
 import Pages from "../PageSelection/Pages";
 import BuyDialog from "./BuyDialog";
 
+//Renders a single product in the product list
 function ListItem(props) {
   const [showBuyDialog, setShowBuyDialog] = useState(false);
   const { id, name, daysLeft, likeCount, questions } = props.product;
 
+  //answers are stored as values in the questions object
   const answersCount = questions ? Object.values(questions).length : 0;
 
+  //takes user to Edit page and sets
   const handleEditClick = () => {
     props.changePage(Pages.EDIT_PRODUCT);
     props.setCurrentProduct(props.product);
   };
 
+  //a user can mark a product as "bought" only if cooling period has lapsed
   const canBuy = daysLeft === 0;
 
   return (

@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Alert } from "react-bootstrap";
 
+//An alert to display user-friendly text at exception handling
 const ErrorAlert = (props) => {
   const { error, setError } = props;
   return (

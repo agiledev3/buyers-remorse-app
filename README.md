@@ -22,7 +22,7 @@ In the project directory, if it is your first time opening, run _yarn install_ t
 [Contribute](https://github.com/agiledev3/buyers-remorse-app/blob/main/CONTRIBUTING.md)
 
 ## Licence
-[MIT](https://github.com/agiledev3/buyers-remorse-app/blob/main/LICENCE.md)
+[MIT](https://github.com/agiledev3/buyers-remorse-app/blob/main/LICENSE.md)
 
 ## Available Scripts To Get You Started
 (These are native to React apps for more info check React doc's)

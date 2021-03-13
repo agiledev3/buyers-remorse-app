@@ -19,10 +19,10 @@ run _npm install --global yarn_ in the cmd prompt to install yarn
 In the project directory, if it is your first time opening, run _yarn install_ to install all project dependencies. 
 
 ## Contribution
-[Contribute](https://github.com/agiledev3/buyers-remorse-app/CONTRIBUTING.md)
+[Contribute](https://github.com/agiledev3/buyers-remorse-app/blob/main/CONTRIBUTING.md)
 
 ## Licence
-[MIT](https://github.com/agiledev3/buyers-remorse-app/LICENCE.md)
+[MIT](https://github.com/agiledev3/buyers-remorse-app/blob/main/LICENCE.md)
 
 ## Available Scripts To Get You Started
 (These are native to React apps for more info check React doc's)

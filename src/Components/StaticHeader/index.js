@@ -1,6 +1,8 @@
 import React from "react";
 import { Card, Col, Row, Button } from "react-bootstrap";
+import useStaticHeader from "./useStaticHeader.js";
 
+//Renders a header component of the page: title, subtitle and optionally back button
 function StaticHeader(props) {
   const { title, onBackButtonClick } = props;
   return (
@@ -31,4 +33,4 @@ function StaticHeader(props) {
   );
 }
 
-export default StaticHeader;
+export { StaticHeader, useStaticHeader };

@@ -7,6 +7,7 @@ import questions from "./questions.json";
 import Pages from "../PageSelection/Pages.js";
 import ProductNotifications from "../../ProductNotifications.js";
 
+//Renders a list of products as a home page
 const Home = (props) => {
   const {
     openNewQuestionModal,
@@ -18,6 +19,7 @@ const Home = (props) => {
     productId,
   } = useNewQuestionModal(questions);
 
+  //save answer to an awareness question, upvotes product and closes question modal
   const handleNewQuestionSave = ({ productId, question, answer }) => {
     if (question && answer)
       props.updateProduct(productId, { questions: { [question]: answer } });
@@ -25,6 +27,7 @@ const Home = (props) => {
     closeNewQuestionModal();
   };
 
+  //sets values of the header element at page load
   useEffect(() => {
     props.setStaticHeader({
       title: "My wishlist",

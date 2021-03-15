@@ -5,6 +5,7 @@ const findQuestionNotAlreadyAnswered = (questions, product) => {
   return questions.find((q) => !product.questions[q]);
 };
 
+//holds logic used in awareness question pop-up
 const useNewQuestionModal = (questions) => {
   const [show, setShow] = useState(false);
   const [question, setQuestion] = useState("");

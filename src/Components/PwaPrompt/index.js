@@ -3,6 +3,8 @@ import { Button, Modal, Card } from "react-bootstrap";
 import useAppInstallPrompt from "./useAppInstallPrompt";
 import PwaIcon from "./pwa.ico";
 
+//prompts users to install app on devices
+//rendered once a day; only on mobile
 export const PwaPrompt = () => {
   const [appInstallPrompt, onPromptClick] = useAppInstallPrompt();
 
@@ -25,8 +27,8 @@ export const PwaPrompt = () => {
       </Modal.Header>
       <Modal.Body>
         <Card.Text className="text-center">
-          Open browser settings and tap &quot;Add to Home Screen&quot; to
-          install the app
+          Open browser menu and tap &quot;Add to Home Screen&quot; to install
+          the app
         </Card.Text>
         <div className="d-flex justify-content-center">
           <Button onClick={onPromptClick}>Close</Button>

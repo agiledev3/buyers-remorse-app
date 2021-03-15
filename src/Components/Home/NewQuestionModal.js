@@ -1,9 +1,12 @@
 import React from "react";
 import { Modal, Form, Button } from "react-bootstrap";
 
+//Renders a pop-up with an awareness question
 const NewQuestionModal = (props) => {
+  //default key for Enter key on keyboard
   const enterKeyCode = 13;
 
+  //action taken on confirm button click
   const confirmAnswer = () => {
     props.onSaveClick({
       productId: props.productId,
@@ -13,6 +16,7 @@ const NewQuestionModal = (props) => {
   };
 
   const handleKeyboardEvent = (e) => {
+    //ensures expected behaviour of Enter key - saving the answer
     if (!!props.question && e.keyCode === enterKeyCode) {
       e.preventDefault();
       if (props.answer.length !== 0) {

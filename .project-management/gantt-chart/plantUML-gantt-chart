@@ -1,0 +1,98 @@
+@startgantt
+skinparam classFontColor automatic
+Project starts 2020-12-31
+printscale daily
+-- Research --
+
+[React intro & familiarisation] lasts 18 days and is 100% complete
+
+-- Third iteration --
+[9th meeting] happens at 2021-01-17
+[Deliv. build plan] lasts 7 days and is 100% complete
+
+[10th meeting] happens at 2021-01-24
+[Milestone 1 build] lasts 14 days and is colored in Cyan and is 100% complete
+[1. f.back] as [M1 f.back] lasts 4 days and is colored in Cyan and is 100% complete
+[1. update] as [M1 update] lasts 5 days and is colored in Cyan and is 100% complete
+[1. testing] as [M1 testing] is colored in Cyan and is 100% complete
+[11th meeting] happens at 2021-01-31
+[12th meeting] happens at 2021-02-07
+
+-- Fourth iteration --
+[Milestone 2 build] lasts 18 days and is colored in Lime and is 100% complete
+[2. f.back] as [M2 f.back] lasts 4 days and is colored in Lime and is 100% complete
+[2. update] as [M2 update] lasts 5 days and is colored in Lime and is 50% complete
+[2. testing] as [M2 testing] is colored in Lime and is 80% complete
+
+[13th meeting] happens at 2021-02-14
+[14th meeting] happens at 2021-02-21
+
+--Fifth iteration --
+
+[<color:white>Milestone 3 build] as [Milestone 3 build] lasts 14 days and is colored in DarkBlue and is 70% complete
+[3. f.back] as [M3 f.back] lasts 4 days and is colored in DarkBlue and is 0% complete
+[3. update] as [M3 update] lasts 5 days and is colored in DarkBlue and is 0% complete
+[<color:white>3. testing] as [M3 testing] is colored in DarkBlue and is 40% complete
+
+[15th meeting] happens at 2021-02-28
+[16th meeting] happens at 2021-03-07
+[17th meeting] happens at 2021-03-14
+
+-- proposed Sixth iteration --
+[Milestone 4 build] lasts 14 days and is 0% complete
+[4. f.back] as [M4 f.back] lasts 4 days and is 0% complete
+[4. update] as [M4 update] lasts 5 days and is 0% complete
+[4. testing] as [M4 testing] is 0% complete
+
+
+
+-- Final Submission --
+[Final report writing] is 60% complete
+[clean up] lasts 4 days and is 0% complete
+[Submit] lasts 4 days and is 0% complete
+
+[18th meeting] happens at 2021-03-21
+[19th meeting] happens at 2021-03-28
+
+
+-- Wrap up --
+[wrap-up] lasts 7 days and is 0% complete
+
+2020-12-24 is closed
+2020-12-25 is closed
+2020-12-31 is closed
+2021-01-01 is closed
+
+[Final Deadline] happens at 2021-03-29
+
+[React intro & familiarisation] starts 2021-01-03
+[Final report writing] starts 2021-02-04 and ends 2021-03-21
+[clean up] starts at [Final report writing]'s end
+[Submit] starts at [clean up]'s end
+
+[Deliv. build plan] starts at [React intro & familiarisation]'s end
+
+[Milestone 1 build] starts at [Deliv. build plan]'s end
+[M1 f.back] starts at [Milestone 1 build]'s end
+[M1 update] starts at [M1 f.back]'s end
+[M1 testing] starts at [Milestone 1 build]'s end and ends at [M1 update]'s end
+[Milestone 2 build] starts at [Milestone 1 build]'s end
+[M2 f.back] starts at [Milestone 2 build]'s end
+[M2 update] starts at [M2 f.back]'s end 
+[M2 testing] starts at [Milestone 2 build]'s end and ends at [M2 update]'s end
+[Milestone 3 build] starts at [Milestone 2 build]'s end
+[M3 f.back] starts at [Milestone 3 build]'s end
+[M3 update] starts at [M3 f.back]'s end 
+[M3 testing] starts at [Milestone 3 build]'s end and ends at [M3 update]'s end
+[Milestone 4 build] starts at [Submit]'s end
+[M4 f.back] starts at [Milestone 4 build]'s end
+[M4 update] starts at [M4 f.back]'s end 
+[M4 testing] starts at [Milestone 4 build]'s end and ends at [M4 update]'s end
+
+[wrap-up] starts 2021-03-30
+[M3 testing] -> [Milestone 4 build]
+
+2021-01-11 is colored in FireBrick
+2021-03-29 is colored in FireBrick
+--
+@endganttchart
